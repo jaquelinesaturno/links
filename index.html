@@ -997,12 +997,14 @@ function filtraLinks() {
   const termo = semAcento(campoPesquisa.value.trim());
   caixasLinks.forEach(li => li.hidden = !!termo && !semAcento(li.textContent).includes(termo));
 }
-campoPesquisa.addEventListener("input", filtraLinks);
-formPesquisa.addEventListener("submit", e => {
-  e.preventDefault();
-  filtraLinks();
-  document.getElementById("links").scrollIntoView({ behavior: "smooth", block: "start" });
-});
+if (formPesquisa) {
+  campoPesquisa.addEventListener("input", filtraLinks);
+  formPesquisa.addEventListener("submit", e => {
+    e.preventDefault();
+    filtraLinks();
+    document.getElementById("links").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
 // Entrada suave dos blocos
 const obs = "IntersectionObserver" in window && new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add("visivel"); obs.unobserve(e.target); }
