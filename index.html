@@ -1051,6 +1051,12 @@ const EN = {
   "Promoções de peças no Instagram": "Deals on Instagram", "ver": "see",
   "Início": "Home", "Sobre nós": "About us", "Nossos produtos": "Our products", "Portfólio": "Portfolio", "Conversar": "Talk", "Cupons": "Coupons", "História": "Story"
 };
+// Faixa de avisos: repete as mensagens para a faixa rolar de ponta a ponta sem buraco
+// (fica antes do dicionário para as cópias também mudarem para inglês)
+const faixaTrilho = document.querySelector(".faixa-trilho");
+faixaTrilho.innerHTML = faixaTrilho.innerHTML.repeat(6);
+faixaTrilho.querySelectorAll(".faixa-item").forEach((el, i) => { if (i >= 3) el.setAttribute("aria-hidden", "true"); });
+
 const textos = [];
 [document.querySelector(".faixa-avisos"), document.querySelector(".topo"), document.querySelector("main"), document.querySelector(".conversar"), document.querySelector(".assinatura"), document.querySelector(".nav")].forEach(raiz => {
   const w = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT);
