@@ -907,7 +907,8 @@ const iconeMarca = m => m.logo
 // a lista se repete até encher a tela, e a segunda cópia faz o giro ficar contínuo
 const voltas = Math.max(1, Math.ceil(16 / MARCAS.length));
 const listaMarcas = Array.from({ length: voltas }, () => MARCAS.map(iconeMarca).join("")).join("");
-document.getElementById("faixaMarcas").innerHTML = `<ul aria-label="Marcas atendidas">${listaMarcas}</ul><ul aria-hidden="true">${listaMarcas}</ul>`;
+const faixaMarcas = document.getElementById("faixaMarcas");
+if (faixaMarcas) faixaMarcas.innerHTML =`<ul aria-label="Marcas atendidas">${listaMarcas}</ul><ul aria-hidden="true">${listaMarcas}</ul>`;
 
 // Depoimentos: copia a lista uma vez para a faixa rodar sem emenda
 const trilhoDepo = document.getElementById("trilhoDepo");
