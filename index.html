@@ -512,47 +512,57 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
   .aviso{bottom:32px}
 }
 
-/* ---------- capa infantil (Pequenos Aprendizes): fundo claro, título serifado com a segunda linha rosa ---------- */
+/* ---------- capa infantil (Pequenos Aprendizes): foto das crianças na capa toda, nuvens no fim ---------- */
 .capa-infantil{--capa-rosa:#e8899b;--capa-rosa-forte:#d9667f;--capa-verde:#71866a;--capa-fundo:#fbf6f1}
+.capa.capa-infantil{min-height:0;padding-bottom:250px}
 .capa-infantil .capa-foto{background:var(--capa-fundo)}
-.capa-infantil .foto-modelo{background:linear-gradient(120deg,#fffaf5,#fbf1ea 55%,#f6e4e4);justify-items:end;padding-right:12%;color:rgba(17,17,17,.3)}
-/* arco-íris de enfeite enquanto não tem foto */
-.capa-arco{position:absolute;right:8%;bottom:0;width:min(52%,360px);aspect-ratio:2/1;background:radial-gradient(circle farthest-side at 50% 100%,transparent 40%,#a8d0e6 40% 54%,#bfdcb5 54% 68%,#f7df95 68% 82%,#f4b6c2 82% 99%,transparent 100%)}
-.capa-infantil .capa-foto::after{background:linear-gradient(180deg,rgba(251,246,241,.94),rgba(251,246,241,.6) 55%,rgba(251,246,241,0) 82%)}
+.capa-infantil .capa-foto > img{object-position:50% 60%}
+.capa-infantil .capa-foto::after{background:linear-gradient(180deg,rgba(251,246,241,.95),rgba(251,246,241,.82) 45%,rgba(251,246,241,0) 66%)}
+/* nuvens brancas no fim da capa (a da frente branca, a de trás clarinha) */
+.capa-nuvens{position:absolute;z-index:2;left:0;right:0;bottom:-1px;width:100%;height:56px;pointer-events:none}
+.capa-nuvens .atras{fill:#fff;opacity:.6}
+.capa-nuvens .frente{fill:#fff}
 .capa-infantil .capa-esquerda{max-width:460px}
-.capa-sobre{margin:0 0 12px;font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--capa-verde)}
-.capa-infantil h1{font-family:"DM Serif Display",Georgia,serif;font-weight:400;letter-spacing:-.01em;line-height:1.02;font-size:clamp(40px,11vw,58px);color:var(--tinta)}
+.capa-sobre{margin:0 0 12px;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--capa-verde)}
+.capa-infantil h1{font-family:"DM Serif Display",Georgia,serif;font-weight:400;letter-spacing:-.01em;line-height:1.04;font-size:clamp(36px,10vw,52px);color:var(--tinta)}
 .capa-infantil h1 em{font-style:normal;color:var(--capa-rosa)}
 .capa-coracao{display:inline-block;width:.6em;height:.6em;margin-left:.14em;vertical-align:.02em;fill:none;stroke:var(--capa-rosa);stroke-width:1.5;stroke-linejoin:round}
-.capa-texto{margin:16px 0 0;max-width:340px;font-size:14.5px;line-height:1.6;color:#333333}
-.capa-botoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.capa-texto{margin:14px 0 0;max-width:340px;font-size:14.5px;line-height:1.6;color:#333333}
+.capa-botoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .capa-btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:6px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:transform .2s,background .2s}
 .capa-btn:hover{transform:translateY(-2px)}
 .capa-btn-cheio{background:var(--capa-rosa);color:#fff}
 .capa-btn-cheio:hover{background:var(--capa-rosa-forte)}
 .capa-btn-contorno{background:#fff;color:var(--tinta);border:1.5px solid #3a3a3a}
-/* logo da loja num selo redondo por cima da foto */
-.capa-selo{position:absolute;z-index:2;right:calc(var(--gutter) + 16px);bottom:22px;width:108px;height:108px;padding:4px;border-radius:50%;background:#fff;object-fit:cover;box-shadow:0 16px 32px -16px rgba(17,17,17,.4)}
-.capa-diferenciais{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:12px 10px;margin:22px 0 0;padding:12px;list-style:none;border-radius:18px;background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.capa-diferenciais li{display:flex;align-items:flex-start;gap:8px}
-.capa-diferenciais svg{flex:none;width:26px;height:26px;fill:none;stroke:var(--tinta);stroke-width:1.4;stroke-linejoin:round;stroke-linecap:round}
-.capa-diferenciais b{display:block;font-size:12px;line-height:1.3}
-.capa-diferenciais small{display:block;font-size:10.5px;line-height:1.35;color:#666666}
+/* diferenciais logo abaixo das nuvens, no branco */
+.capa-vantagens{padding-top:6px;padding-bottom:26px}
+.capa-diferenciais{display:grid;grid-template-columns:1fr 1fr;gap:18px 10px;margin:0;padding:0;list-style:none}
+.capa-diferenciais li{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.capa-diferenciais i{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#fde3e8}
+.capa-diferenciais li:nth-child(2) i{background:#dcebf7}
+.capa-diferenciais li:nth-child(3) i{background:#fdf0c4}
+.capa-diferenciais li:nth-child(4) i{background:#e2f0dc}
+.capa-diferenciais svg{width:24px;height:24px;fill:none;stroke:var(--tinta);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.capa-diferenciais b{display:block;font-size:13px;line-height:1.3}
+.capa-diferenciais small{display:block;font-size:11.5px;line-height:1.4;color:#666666}
 @media (max-width:959px){
-  .capa-infantil{padding-bottom:150px}
-  .capa-infantil .foto-modelo{align-items:end;justify-items:start;padding:0 0 28px 24px}
   .capa-btn{flex:1 1 auto;min-height:44px;padding:0 12px;font-size:10.5px;letter-spacing:.05em}
 }
 @media (min-width:960px){
-  .capa-infantil .capa-foto::after{background:linear-gradient(90deg,rgba(251,246,241,.96),rgba(251,246,241,.75) 40%,rgba(251,246,241,0) 64%)}
+  .capa.capa-infantil{padding:40px calc(var(--gutter) + 44px) 120px}
+  .capa-infantil .capa-foto > img{object-position:50% 42%}
+  .capa-infantil .capa-foto::after{background:linear-gradient(90deg,rgba(251,246,241,.96),rgba(251,246,241,.8) 38%,rgba(251,246,241,0) 60%)}
+  .capa-nuvens{height:90px}
   .capa-infantil .capa-esquerda{max-width:620px}
-  .capa-infantil h1{font-size:clamp(50px,5.4vw,76px);max-width:none}
+  .capa-infantil h1{font-size:clamp(44px,4.6vw,62px);max-width:none}
   .capa-texto{font-size:16px;max-width:380px}
-  .capa-botoes{margin-top:28px}
-  .capa-selo{top:34px;bottom:auto;right:calc(var(--gutter) + 34px);width:176px;height:176px;padding:5px}
-  .capa-diferenciais{grid-template-columns:repeat(4,auto);justify-content:start;gap:30px;margin-top:44px;padding:0;background:none;-webkit-backdrop-filter:none;backdrop-filter:none}
-  .capa-diferenciais b{font-size:12.5px}
-  .capa-diferenciais small{font-size:11px}
+  .capa-botoes{margin-top:26px}
+  .capa-vantagens{padding-top:10px;padding-bottom:36px}
+  .capa-diferenciais{grid-template-columns:repeat(4,1fr);gap:0}
+  .capa-diferenciais li{padding:0 18px}
+  .capa-diferenciais li + li{border-left:2px dashed #f2b8c4}
+  .capa-diferenciais b{font-size:14.5px}
+  .capa-diferenciais small{font-size:12.5px}
 }
 
 /* entrada suave */
@@ -625,8 +635,8 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
   <section class="miolo capa capa-infantil" aria-label="Apresentação">
     <div class="capa-esquerda">
       <!-- EDITAR: frase pequena, título (a segunda linha fica rosa), texto e botões da capa -->
-      <p class="capa-sobre">Fofo. Confortável. Cheio de estilo.</p>
-      <h1>Looks fofos.<br><em>Sorrisos grandes.</em><svg class="capa-coracao" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg></h1>
+      <p class="capa-sobre">Moda infantil e juvenil</p>
+      <h1>O look que seu filho<br><em>precisa está aqui</em><svg class="capa-coracao" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg></h1>
       <p class="capa-texto">Roupas confortáveis e cheias de estilo para todas as aventuras dos pequenos.</p>
       <div class="capa-botoes">
         <!-- EDITAR: link da loja ou vitrine da coleção -->
