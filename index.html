@@ -523,7 +523,9 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
 /* celular: foto embaixo do texto (recorte do meio, onde estão as crianças), esfumada no alto */
 .capa-infantil .capa-foto > img{top:auto;right:0;bottom:0;left:0;width:100%;height:auto;aspect-ratio:6/5;object-fit:cover;object-position:55% 50%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 22%);mask-image:linear-gradient(180deg,transparent,#000 22%)}
 /* nuvens brancas no fim da capa */
-.capa-nuvens{position:absolute;z-index:2;left:0;right:0;bottom:-1px;width:100%;height:46px;pointer-events:none;fill:#fff}
+.capa-nuvens{position:absolute;z-index:2;left:0;right:0;bottom:-1px;width:100%;height:64px;pointer-events:none;overflow:visible}
+.capa-nuvens .nuvem-fundo{fill:#fff;opacity:.55}
+.capa-nuvens .nuvem-frente{fill:#fff;filter:drop-shadow(0 -4px 10px rgba(110,120,150,.14))}
 .capa-infantil .capa-esquerda{max-width:460px}
 .capa-sobre{margin:0 0 12px;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--capa-rosa)}
 .capa-infantil h1{font-family:var(--titulo);font-weight:800;letter-spacing:-.01em;line-height:1.08;font-size:clamp(29px,8.1vw,52px);color:var(--capa-azul)}
