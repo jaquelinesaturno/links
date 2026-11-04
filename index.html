@@ -538,11 +538,9 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
 .capa-vantagens{padding-top:6px;padding-bottom:26px}
 .capa-diferenciais{display:grid;grid-template-columns:1fr 1fr;gap:18px 10px;margin:0;padding:0;list-style:none}
 .capa-diferenciais li{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
-.capa-diferenciais i{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#fde3e8}
-.capa-diferenciais li:nth-child(2) i{background:#dcebf7}
-.capa-diferenciais li:nth-child(3) i{background:#fdf0c4}
-.capa-diferenciais li:nth-child(4) i{background:#e2f0dc}
-.capa-diferenciais svg{width:24px;height:24px;fill:none;stroke:var(--tinta);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.capa-diferenciais i{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#ffe1ea;--traco:var(--capa-rosa)}
+.capa-diferenciais li:nth-child(even) i{background:#dcf0fc;--traco:var(--capa-azul)}
+.capa-diferenciais svg{width:24px;height:24px;fill:none;stroke:var(--traco);stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
 .capa-diferenciais b{display:block;font-size:13px;line-height:1.3}
 .capa-diferenciais small{display:block;font-size:11.5px;line-height:1.4;color:#666666}
 @media (max-width:959px){
