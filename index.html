@@ -1085,20 +1085,6 @@ if (formPesquisa) {
     document.getElementById("links").scrollIntoView({ behavior: "smooth", block: "start" });
   });
 }
-// Faixa de avisos: troca a mensagem a cada 4 segundos (para quando o mouse está em cima)
-const avisos = [...document.querySelectorAll(".faixa-avisos p")];
-let avisoAtual = 0, avisoPausa = false;
-document.querySelector(".faixa-avisos").addEventListener("mouseenter", () => avisoPausa = true);
-document.querySelector(".faixa-avisos").addEventListener("mouseleave", () => avisoPausa = false);
-setInterval(() => {
-  if (avisoPausa || document.hidden) return;
-  const sai = avisos[avisoAtual];
-  avisoAtual = (avisoAtual + 1) % avisos.length;
-  avisos.forEach(p => p.classList.remove("saindo"));
-  sai.classList.remove("ativo"); sai.classList.add("saindo");
-  avisos[avisoAtual].classList.add("ativo");
-}, 4000);
-
 // Entrada suave dos blocos
 const obs = "IntersectionObserver" in window && new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add("visivel"); obs.unobserve(e.target); }
