@@ -547,7 +547,9 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
   .capa-btn{flex:1 1 auto;min-height:44px;padding:0 12px;font-size:10.5px;letter-spacing:.05em}
 }
 @media (min-width:960px){
-  .capa.capa-infantil{display:flex;flex-direction:column;justify-content:center;min-height:min(calc(100svh - 120px),560px);padding:40px calc(var(--gutter) + 44px) 80px}
+  .capa.capa-infantil{display:flex;flex-direction:column;justify-content:flex-start;min-height:min(calc(100svh - 120px),560px);padding:60px calc(var(--gutter) + 44px) 80px}
+  /* arco-íris clarinho no espaço vazio entre o texto e as crianças, saindo das nuvens */
+  .capa-infantil .capa-arco{display:block;z-index:0;left:calc(50% - 250px);right:auto;bottom:38px;width:270px;opacity:.5}
   /* computador: foto inteira à direita, esfumada na esquerda */
   /* a sobra da direita (só nuvens) fica para fora, para as crianças não ficarem atrás do texto */
   .capa-infantil .capa-foto > img{top:0;bottom:0;left:auto;width:auto;height:100%;aspect-ratio:1600/901;transform:translateX(14%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 20%);mask-image:linear-gradient(90deg,transparent,#000 20%)}
