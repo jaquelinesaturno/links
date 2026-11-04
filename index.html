@@ -646,6 +646,24 @@ body{padding-top:0}
   .produtos-lista small{font-size:12.5px}
 }
 
+/* ---------- grupo VIP do WhatsApp: faixa azul, foto à esquerda, título grande e botão branco ---------- */
+.grupo-vip{position:relative;overflow:hidden;display:grid;grid-template-columns:120px 1fr;grid-template-areas:"foto texto" "foto botao";align-items:center;gap:6px 14px;margin-top:40px;padding:18px 16px 18px 0;border-radius:24px;background:linear-gradient(100deg,#6cc4f4,#1a8fd6 55%);color:#fff}
+.grupo-foto{grid-area:foto;align-self:stretch;width:100%;height:100%;min-height:130px;margin:-18px 0;object-fit:cover;object-position:76% 62%;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent);mask-image:linear-gradient(90deg,#000 55%,transparent)}
+.grupo-texto{grid-area:texto}
+.grupo-vip h2{font-size:34px;line-height:1;color:#ffb02e;-webkit-text-stroke:2px #fff;paint-order:stroke fill;text-shadow:0 3px 0 rgba(0,0,0,.12);text-transform:uppercase;letter-spacing:.02em}
+.grupo-vip p{margin:6px 0 0;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.grupo-btn{grid-area:botao;justify-self:start;display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;background:#fff;color:#ff8a00;font:800 14px/1 var(--titulo);text-transform:uppercase;letter-spacing:.04em;box-shadow:0 8px 18px -10px rgba(0,0,0,.4);transition:transform .2s}
+.grupo-btn:hover{transform:translateY(-2px)}
+.grupo-btn svg{width:20px;height:20px;color:#25d366}
+@media (min-width:960px){
+  .grupo-vip{grid-template-columns:300px 1fr auto;grid-template-areas:"foto texto botao";gap:30px;margin-top:56px;padding:26px 44px 26px 0}
+  .grupo-foto{min-height:170px;margin:-26px 0}
+  .grupo-vip h2{font-size:64px;-webkit-text-stroke:3px #fff}
+  .grupo-vip p{font-size:16px}
+  .grupo-btn{padding:16px 30px;font-size:20px}
+  .grupo-btn svg{width:26px;height:26px}
+}
+
 /* entrada suave */
 .revela{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .revela.visivel{opacity:1;transform:none}
