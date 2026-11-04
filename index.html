@@ -586,16 +586,35 @@ body{padding-top:0}
   .capa-infantil .capa-foto > img{right:0}
 }
 
-/* ---------- faixa azul de avisos (em cima da barra fixa) ---------- */
-.faixa-avisos{position:relative;overflow:hidden;height:40px;margin:0 calc(-1 * var(--borda-pag));background:var(--capa-azul,#1a8fd6);color:#fff;font:700 12.5px/1.25 var(--sans);letter-spacing:.06em;text-transform:uppercase}
-.faixa-avisos{--capa-azul:#1a8fd6}
-.faixa-avisos p{position:absolute;inset:0;margin:0;padding:0 16px;display:flex;align-items:center;justify-content:center;text-align:center;opacity:0;transform:translateY(100%);transition:opacity .5s ease,transform .5s ease}
-.faixa-avisos p.ativo{opacity:1;transform:none}
-.faixa-avisos p.saindo{transform:translateY(-100%)}
-.faixa-avisos a{display:inline-flex;align-items:center;gap:12px;color:#fff}
-.faixa-pilula{background:#fff;color:#1a8fd6;border-radius:999px;padding:4px 14px;font-size:11px}
+/* ---------- faixa azul de avisos (em cima da barra fixa), rolando para o lado ---------- */
+.faixa-avisos{position:relative;z-index:1;overflow:hidden;margin:0 calc(-1 * var(--borda-pag));padding:10px 0 22px;background:#1a8fd6;color:#fff;font:700 12.5px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.faixa-trilho{display:flex;width:max-content;animation:faixa-rola 40s linear infinite}
+.faixa-avisos:hover .faixa-trilho{animation-play-state:paused}
+.faixa-item{display:inline-flex;align-items:center;gap:12px;padding:0 28px;color:#fff}
+.faixa-item::after{content:"";width:6px;height:6px;margin-left:28px;border-radius:50%;background:#ff86ab}
+.faixa-item:has(+ .faixa-item){}
+.faixa-pilula{background:#fff;color:#1a8fd6;border-radius:999px;padding:5px 14px;font-size:11px}
+@keyframes faixa-rola{to{transform:translateX(-50%)}}
 @media (max-width:959px){
-  .faixa-avisos{height:46px;font-size:11px;letter-spacing:.04em}
+  .faixa-avisos{padding:9px 0 19px;font-size:11px;letter-spacing:.04em}
+  .faixa-trilho{animation-duration:30s}
+}
+
+/* ---------- barra fixa: cartão branco arredondado, mais baixa, por cima da faixa azul e da capa ---------- */
+.topo{position:sticky;top:8px;z-index:15;margin:-14px calc(14px - var(--borda-pag)) 0;padding:6px 28px;border-radius:999px;box-shadow:0 12px 30px -18px rgba(17,17,17,.35)}
+.topo.rolou{border-radius:999px;padding-top:6px;padding-bottom:6px}
+.logo-bonecos{width:44px;height:44px}
+.logo-nome{height:38px}
+/* a capa começa por trás da barra, como no exemplo */
+.painel{margin-top:-30px}
+.capa.capa-infantil{padding-top:90px}
+@media (max-width:959px){
+  .topo{margin:-12px calc(8px - var(--borda-pag)) 0;padding:5px 10px 5px 14px}
+  .topo.rolou{border-radius:999px}
+  .logo-bonecos{width:38px;height:38px}
+  .logo-nome{height:32px}
+  .painel{margin-top:-26px}
+  .capa.capa-infantil{padding-top:56px}
 }
 
 /* entrada suave */
