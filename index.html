@@ -802,7 +802,7 @@ body{padding-top:0}
   <div class="resto">
   <!-- ================= GRUPO VIP DO WHATSAPP (faixa azul com foto, título grande e botão) ================= -->
   <!-- EDITAR: quando tiver o link de convite do grupo, troque o botão por href="https://chat.whatsapp.com/..." (sem a classe js-whats-destaque) -->
-  <section class="miolo revela">
+  <section class="miolo revela" id="grupo-vip">
     <div class="grupo-vip">
       <img class="grupo-foto" src="fotos/grupo-vip.jpg" alt="" loading="lazy">
       <div class="grupo-texto">
@@ -811,12 +811,6 @@ body{padding-top:0}
       </div>
       <a class="grupo-btn js-whats-destaque" href="#conversar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg>Eu quero</a>
     </div>
-  </section>
-
-  <!-- ================= FAIXA DE MARCAS (lista no script lá embaixo) ================= -->
-  <section class="miolo marcas revela" id="marcas" aria-label="Marcas com quem já trabalhei">
-    <p class="marcas-titulo">Marcas que confiam no meu trabalho</p>
-    <div class="marcas-faixa"><div class="marcas-trilho" id="faixaMarcas"></div></div>
   </section>
 
   <!-- ================= SOBRE MIM: de canto a canto, título de um lado e a história do outro (sem foto) ================= -->
@@ -837,22 +831,6 @@ body{padding-top:0}
     </div>
   </section>
 
-  <!-- ================= MEUS SERVIÇOS: um cartão com foto para cada serviço ================= -->
-  <section class="miolo revela" id="servicos" aria-label="Meus serviços">
-    <div class="servicos-topo">
-      <span class="rotulo">Como eu posso ajudar</span>
-      <h2>Meus serviços</h2>
-    </div>
-    <!-- EDITAR: um cartão por serviço (troque "foto-modelo" por <img src="fotos/servico-1.jpg" alt="...">) -->
-    <ul class="servicos-fotos">
-      <li><div class="servico-foto"><div class="foto-modelo">Foto do serviço</div></div><b>UGC orgânico</b><span>Vídeos naturais para o perfil da marca, com roteiro, gravação e edição.</span></li>
-      <li><div class="servico-foto"><div class="foto-modelo">Foto do serviço</div></div><b>UGC para anúncios</b><span>Criativos feitos para tráfego pago, com ganchos que prendem.</span></li>
-      <li><div class="servico-foto"><div class="foto-modelo">Foto do serviço</div></div><b>Publi no meu perfil</b><span>Sua marca nos meus Reels, Stories e TikTok.</span></li>
-      <li><div class="servico-foto"><div class="foto-modelo">Foto do serviço</div></div><b>Fotos de produto</b><span>Fotos lifestyle com luz natural, prontas para site e redes.</span></li>
-    </ul>
-    <a class="btn-claro servicos-btn js-whats-msg" data-msg="Oi! Vim pelo seu Instagram e quero saber mais sobre os seus serviços." href="#conversar" target="_blank" rel="noopener">pedir um orçamento <span class="seta">→</span></a>
-  </section>
-
   <!-- ================= DEPOIMENTOS ================= -->
   <section class="miolo revela" id="depoimentos" aria-label="Depoimentos">
     <p class="marcas-titulo">O que as marcas dizem</p>
@@ -867,29 +845,6 @@ body{padding-top:0}
       <figure class="depo"><blockquote>As fotos ficaram lindas e já estão no nosso site.</blockquote><figcaption><b>@marcacinco</b><span>Fotos de produto</span></figcaption></figure>
     </div>
     </div></div>
-  </section>
-
-  <!-- ================= CUPONS E VITRINES (no fim da página) ================= -->
-  <section class="miolo revela" id="cupons" aria-label="Cupons e vitrines">
-    <div class="cartao-claro cupons-cartao">
-      <span class="rotulo">Para você economizar</span>
-      <h2>Cupons e vitrines</h2>
-      <p>Copia o código e usa na finalização da compra, no site da marca.</p>
-      <!-- EDITAR: um cupom por marca (nome, desconto, código e link do site) -->
-      <div class="cupons">
-        <div class="cupom"><span class="marca-tag">Marca 1</span><div><b>10% off</b><code>SEUCUPOM10</code></div>
-          <div class="cupom-acoes"><button type="button" data-copiar="SEUCUPOM10">copiar</button><a href="#" target="_blank" rel="noopener">ir pro site ↗</a></div></div>
-        <div class="cupom"><span class="marca-tag">Marca 2</span><div><b>15% off</b><code>SEUCUPOM15</code></div>
-          <div class="cupom-acoes"><button type="button" data-copiar="SEUCUPOM15">copiar</button><a href="#" target="_blank" rel="noopener">ir pro site ↗</a></div></div>
-        <div class="cupom"><span class="marca-tag">Marca 3</span><div><b>Frete grátis</b><code>SEUCUPOMFRETE</code></div>
-          <div class="cupom-acoes"><button type="button" data-copiar="SEUCUPOMFRETE">copiar</button><a href="#" target="_blank" rel="noopener">ir pro site ↗</a></div></div>
-      </div>
-      <!-- EDITAR: links das vitrines (Amazon, Shopee, Mercado Livre...) -->
-      <div class="vitrines">
-        <a href="#" target="_blank" rel="noopener"><span>Minha vitrine na Amazon</span><i>↗</i></a>
-        <a href="#" target="_blank" rel="noopener"><span>Meus achadinhos na Shopee</span><i>↗</i></a>
-      </div>
-    </div>
   </section>
   </div>
 </main>
