@@ -563,6 +563,24 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
   .capa-diferenciais small{font-size:12.5px}
 }
 
+/* ---------- barra fixa e capa de ponta a ponta (o conteúdo continua centralizado) ---------- */
+:root{--borda-pag:24px}
+body{padding-top:0}
+.topo,.painel{max-width:none;margin-left:calc(-1 * var(--borda-pag));margin-right:calc(-1 * var(--borda-pag));border-radius:0}
+.topo{top:0;padding-left:max(40px,calc((100vw - 1220px) / 2 + 40px));padding-right:max(44px,calc((100vw - 1220px) / 2 + 44px))}
+.topo.rolou{border-radius:0}
+.capa.capa-infantil .capa-foto{left:calc((100% - 100vw) / 2);right:calc((100% - 100vw) / 2);border-radius:0}
+@media (max-width:959px){
+  :root{--borda-pag:10px}
+  .topo{padding:14px 16px}
+  .topo.rolou{border-radius:0}
+  .capa.capa-infantil{padding-bottom:calc(100vw * 1540 / 1080 - 80px)}
+}
+@media (min-width:960px){
+  /* a foto acompanha a borda direita do conteúdo, não a da tela */
+  .capa-infantil .capa-foto > img{right:max(0px,calc((100vw - var(--max)) / 2))}
+}
+
 /* entrada suave */
 .revela{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .revela.visivel{opacity:1;transform:none}
