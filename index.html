@@ -949,7 +949,7 @@ const WHATSAPP_MSG_EN = "Hi! I found you on Instagram and I'd like to talk about
 const whats = msg => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
 document.querySelectorAll(".js-whats").forEach(a => a.href = whats(WHATSAPP_MSG));
 document.querySelectorAll(".js-whats-msg").forEach(a => a.href = whats(a.dataset.msg));
-const WHATSAPP_MSG_DESTAQUE = "Oi! Quero saber mais sobre o seu destaque do momento.";
+const WHATSAPP_MSG_DESTAQUE = "Oi! Quero entrar no grupo VIP da Pequenos Aprendizes no WhatsApp.";
 document.querySelectorAll(".js-whats-destaque").forEach(a => a.href = whats(WHATSAPP_MSG_DESTAQUE));
 
 // EDITAR: marcas da faixa (logo na pasta "logos"; sem logo, aparece o nome)
