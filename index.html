@@ -547,7 +547,7 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
   .capa-btn{flex:1 1 auto;min-height:44px;padding:0 12px;font-size:10.5px;letter-spacing:.05em}
 }
 @media (min-width:960px){
-  .capa.capa-infantil{display:flex;flex-direction:column;justify-content:flex-start;min-height:min(calc(100svh - 120px),560px);padding:60px calc(var(--gutter) + 44px) 80px}
+  .capa.capa-infantil{display:flex;flex-direction:column;justify-content:flex-start;min-height:min(calc(100svh - 120px),560px);padding:60px calc(var(--gutter) + 44px) 80px var(--gutter)}
   /* arco-íris clarinho no canto esquerdo, entre a borda da tela e a frase, saindo das nuvens */
   .capa-infantil .capa-arco{display:block;position:absolute;z-index:0;left:0;bottom:38px;width:clamp(240px,calc((100vw - var(--max)) / 2 + 220px),380px);aspect-ratio:2/1;opacity:.32;transform:translateX(-38%) rotate(45deg);transform-origin:50% 100%;background:radial-gradient(circle farthest-side at 50% 100%,transparent 40%,#6cc4f4 40% 54%,#bfe3b4 54% 68%,#ffe08a 68% 82%,#ff86ab 82% 99%,transparent 100%)}
   /* computador: foto inteira à direita, esfumada na esquerda */
