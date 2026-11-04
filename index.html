@@ -630,11 +630,13 @@ body{padding-top:0}
 <!-- começo da página: "Início" e o logo voltam para cá (o topo é fixo, então não serve de destino) -->
 <span id="comeco" aria-hidden="true"></span>
 <!-- contato da loja: WhatsApp 5513988195878 (constante WHATSAPP no script), @pequeno_aprendizes, pequenosaprendizes01@gmail.com -->
-<!-- faixa azul de avisos em cima da barra fixa: as mensagens se revezam sozinhas -->
+<!-- faixa azul de avisos em cima da barra fixa: as mensagens rolam para o lado sem parar (o script repete a lista) -->
 <div class="faixa-avisos" aria-label="Avisos da loja">
-  <p class="ativo">Entregamos para todo o Brasil</p>
-  <p>Formas de pagamento: débito, crédito, link de pagamento e Pix</p>
-  <p><a href="https://www.instagram.com/pequeno_aprendizes/" target="_blank" rel="noopener">Promoções de peças no Instagram <span class="faixa-pilula">ver</span></a></p>
+  <div class="faixa-trilho">
+    <span class="faixa-item">Entregamos para todo o Brasil</span>
+    <span class="faixa-item">Formas de pagamento: débito, crédito, link de pagamento e Pix</span>
+    <a class="faixa-item" href="https://www.instagram.com/pequeno_aprendizes/" target="_blank" rel="noopener">Promoções de peças no Instagram <span class="faixa-pilula">ver</span></a>
+  </div>
 </div>
 <!-- ================= TOPO ================= -->
 <header class="topo" id="inicio">
