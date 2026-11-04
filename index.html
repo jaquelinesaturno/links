@@ -800,42 +800,6 @@ body{padding-top:0}
 
   <!-- o resto da página fica no fundo bege -->
   <div class="resto">
-  <!-- ================= LINKS (as caixinhas clicáveis) ================= -->
-  <section class="miolo links revela" id="links" aria-label="Links">
-      <!-- EDITAR: caixinhas de links (cor, ícone, título, texto e link) -->
-      <ul class="caixas">
-        <li class="caixa-rosa" id="portfolio"><a href="#">
-          <span class="caixa-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 9 5 3-5 3V9Z"/></svg></span>
-          <span class="caixa-texto"><strong>Meu portfólio UGC</strong><small>vídeos que fiz para as marcas</small></span>
-          <span class="caixa-seta" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </a></li>
-        <li class="caixa-azul"><a class="js-whats-msg" data-msg="Oi! Vim pelo seu Instagram e quero falar sobre parcerias UGC e publi." href="#conversar" target="_blank" rel="noopener">
-          <span class="caixa-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.3A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .9c-1-.4-2.4-1.8-2.8-2.8l.9-1-1-2z"/></svg></span>
-          <span class="caixa-texto"><strong>Parcerias UGC e publi</strong><small>fala comigo no WhatsApp</small></span>
-          <span class="caixa-seta" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </a></li>
-        <!-- "Minhas redes": a chavinha abre a caixa ali mesmo -->
-        <li class="caixa-amarelo caixa-redes" id="caixa-redes"><button type="button" id="abrir-redes" aria-expanded="false" aria-controls="redes-detalhe">
-          <span class="caixa-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg></span>
-          <span class="caixa-texto"><strong>Minhas redes</strong><small>Instagram, TikTok e e-mail</small></span>
-          <span class="chave" aria-hidden="true"></span>
-        </button>
-        <div class="redes-detalhe" id="redes-detalhe">
-          <p>Escolhe por onde quer me encontrar</p>
-          <!-- EDITAR: redes da cliente -->
-          <div class="redes-botoes">
-            <a href="https://www.instagram.com/pequeno_aprendizes/" target="_blank" rel="noopener">Instagram →</a>
-            <a href="https://www.tiktok.com/@seuusuario" target="_blank" rel="noopener">TikTok →</a>
-            <a href="mailto:pequenosaprendizes01@gmail.com">E-mail →</a>
-          </div>
-        </div></li>
-        <li class="caixa-rosa"><a href="#">
-          <span class="caixa-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h11l3 3v13H5z"/><path d="M8 11h8M8 15h5"/></svg></span>
-          <span class="caixa-texto"><strong>Meu mídia kit</strong><small>números, público e valores</small></span>
-          <span class="caixa-seta" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        </a></li>
-      </ul>
-  </section>
   <!-- ================= GRUPO VIP DO WHATSAPP (faixa azul com foto, título grande e botão) ================= -->
   <!-- EDITAR: quando tiver o link de convite do grupo, troque o botão por href="https://chat.whatsapp.com/..." (sem a classe js-whats-destaque) -->
   <section class="miolo revela">
@@ -1027,11 +991,13 @@ marcaRolagem();
 
 // "Minhas redes": a chavinha abre e fecha a caixa ali mesmo
 const caixaRedes = document.getElementById("caixa-redes"), abrirRedes = document.getElementById("abrir-redes");
-abrirRedes.addEventListener("click", () => abrirRedes.setAttribute("aria-expanded", caixaRedes.classList.toggle("aberto")));
-// "Redes" da barra de baixo e do menu: rola até a caixa e já deixa ela aberta
-document.querySelectorAll('.js-abre-redes, .menu a[href="#caixa-redes"]').forEach(a => a.addEventListener("click", () => {
-  caixaRedes.classList.add("aberto"); abrirRedes.setAttribute("aria-expanded", "true");
-}));
+if (caixaRedes && abrirRedes) {
+  abrirRedes.addEventListener("click", () => abrirRedes.setAttribute("aria-expanded", caixaRedes.classList.toggle("aberto")));
+  // "Redes" da barra de baixo e do menu: rola até a caixa e já deixa ela aberta
+  document.querySelectorAll('.js-abre-redes, .menu a[href="#caixa-redes"]').forEach(a => a.addEventListener("click", () => {
+    caixaRedes.classList.add("aberto"); abrirRedes.setAttribute("aria-expanded", "true");
+  }));
+}
 
 // Barra de baixo: o botão da parte que está na tela fica em rosa
 const botoesNav = [...document.querySelectorAll("#nav a[data-alvo]")];
