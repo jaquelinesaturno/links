@@ -1131,6 +1131,32 @@ const trilhoDepo = document.getElementById("trilhoDepo");
 const copiaDepo = trilhoDepo.firstElementChild.cloneNode(true);
 copiaDepo.setAttribute("aria-hidden", "true");
 trilhoDepo.appendChild(copiaDepo);
+// Rolagem: anda devagar sozinha; para quando o mouse está em cima; as setas pulam um cartão para o lado
+(() => {
+  const faixa = trilhoDepo.parentElement;
+  const parado = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let pos = 0, alvo = null, pausa = false, toque = 0;
+  const passoCartao = () => { const c = trilhoDepo.querySelector(".depo"); return c ? c.getBoundingClientRect().width + 12 : 240; };
+  faixa.addEventListener("mouseenter", () => pausa = true);
+  faixa.addEventListener("mouseleave", () => pausa = false);
+  faixa.addEventListener("touchstart", () => { pausa = true; clearTimeout(toque); }, { passive: true });
+  faixa.addEventListener("touchend", () => { toque = setTimeout(() => pausa = false, 2500); }, { passive: true });
+  document.querySelectorAll(".depo-seta").forEach(b => b.addEventListener("click", () => {
+    alvo = (alvo ?? pos) + Number(b.dataset.dir) * passoCartao();
+  }));
+  function anda() {
+    const metade = trilhoDepo.scrollWidth / 2;
+    if (alvo !== null) { pos += (alvo - pos) * 0.14; if (Math.abs(alvo - pos) < 0.5) { pos = alvo; alvo = null; } }
+    else if (!pausa && !parado) pos += 0.35;
+    if (metade > 0) {
+      if (pos >= metade) { pos -= metade; if (alvo !== null) alvo -= metade; }
+      if (pos < 0) { pos += metade; if (alvo !== null) alvo += metade; }
+    }
+    trilhoDepo.style.transform = `translateX(${-pos}px)`;
+    requestAnimationFrame(anda);
+  }
+  requestAnimationFrame(anda);
+})();
 
 // Aviso rápido no rodapé da tela
 const aviso = document.getElementById("aviso");
