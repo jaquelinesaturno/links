@@ -712,6 +712,21 @@ body{padding-top:0}
 @media (max-width:959px){
   .en-nuvem1{width:70px;top:6%}.en-nuvem2{width:80px;bottom:3%}.en-balao1{width:26px;top:6%}.en-balao2,.en-pirulito,.en-estrela1{display:none}.en-arco{width:54px;right:30%;top:3%}.en-coracao1{bottom:auto;top:12%;right:18%}
 }
+/* movimentos do grupo VIP: letras pulando, crianças balançando e a setinha clicando no botão */
+.grupo-vip h2 .vl{display:inline-block;animation:vl-pula 2.6s ease-in-out infinite;animation-delay:calc(var(--i) * .09s)}
+.grupo-vip h2 .vl-esp{display:inline-block;width:.28em}
+@keyframes vl-pula{0%,55%,100%{transform:translateY(0) rotate(0)}18%{transform:translateY(-7px) rotate(-6deg)}36%{transform:translateY(1px) rotate(4deg)}}
+.vip-faixa .grupo-foto{transform-origin:40% 100%;animation:vip-balanca 3.2s ease-in-out infinite}
+@keyframes vip-balanca{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(1.4deg)}}
+.grupo-btn{position:relative;animation:vip-aperta 1.8s ease-in-out infinite}
+@keyframes vip-aperta{0%,30%,48%,100%{transform:scale(1)}38%{transform:scale(.95)}}
+.vip-clique{position:absolute;right:-22px;bottom:-24px;width:44px;height:44px;pointer-events:none}
+.vip-clique svg{width:100%;height:100%;overflow:visible}
+.vip-seta{transform-origin:13px 12px;animation:vip-seta 1.8s ease-in-out infinite;filter:drop-shadow(0 2px 2px rgba(0,0,0,.2))}
+@keyframes vip-seta{0%,25%,55%,100%{transform:translate(0,0) scale(1)}38%{transform:translate(-3px,-3px) scale(.88)}}
+.vip-raios{transform-origin:13px 12px;opacity:0;animation:vip-raios 1.8s ease-out infinite}
+@keyframes vip-raios{0%,34%{opacity:0;transform:scale(.6)}42%{opacity:1;transform:scale(1)}62%,100%{opacity:0;transform:scale(1.25)}}
+@media (prefers-reduced-motion:reduce){.grupo-vip h2 .vl,.vip-faixa .grupo-foto,.grupo-btn,.vip-seta,.vip-raios{animation:none}.vip-raios{opacity:1}}
 /* crianças sem fundo: saem por cima da faixa, cortadas só embaixo pelo canto arredondado */
 .grupo-foto{position:absolute;left:4px;bottom:0;width:auto;height:150px;pointer-events:none;clip-path:inset(-200px 0 0 0 round 0 0 0 22px)}
 .grupo-texto{grid-area:texto}
