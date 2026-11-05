@@ -703,7 +703,8 @@ body{padding-top:0}
 /* ---------- grupo VIP do WhatsApp: faixa azul, foto à esquerda, título grande e botão branco ---------- */
 .grupo-vip{position:relative;display:grid;grid-template-columns:142px 1fr;grid-template-areas:"foto texto" "foto botao";align-items:center;gap:6px 12px;min-height:118px;margin-top:52px;padding:14px 16px 14px 0;border-radius:22px;background:linear-gradient(100deg,#6cc4f4,#1a8fd6 55%);color:#fff}
 /* fundo rosa de ponta a ponta atrás do grupo VIP, com enfeites infantis */
-.vip-faixa{position:relative;margin-top:0;padding-top:6px;padding-bottom:46px}
+.vip-faixa{position:relative;margin-top:0;padding-top:6px;padding-bottom:70px}
+@media (min-width:960px){ .vip-faixa{padding-bottom:96px} }
 .vip-faixa .grupo-vip{z-index:1}
 .vip-enfeites{position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);overflow:hidden;pointer-events:none;
   background:#fff}
