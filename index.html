@@ -696,7 +696,12 @@ body{padding-top:0}
 .vip-faixa{position:relative;margin-top:0;padding-top:6px;padding-bottom:46px}
 .vip-faixa .grupo-vip{z-index:1}
 .vip-enfeites{position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);overflow:hidden;pointer-events:none;
-  background:radial-gradient(circle,#fff 2px,transparent 2.5px) 0 0/46px 46px,radial-gradient(circle,rgba(240,69,122,.25) 2px,transparent 2.5px) 23px 23px/46px 46px,linear-gradient(180deg,#ffd9e6,#ffc6da)}
+  background:#fff}
+/* no fundo branco, os enfeites brancos ganham cor clarinha */
+.en-nuvem1 g,.en-nuvem2 g{fill:#dcf0fc}
+.en-estrela2 path{fill:#ff86ab}
+.en-coracao2 path{fill:#6cc4f4}
+.en-balao1 > path:first-child,.en-balao2 > path:first-child,.en-pirulito > path:first-child{stroke:#c9c9c9}
 .en{position:absolute;display:block}
 .en-nuvem1{left:3%;top:12%;width:110px}
 .en-nuvem2{right:3%;bottom:8%;width:130px}
