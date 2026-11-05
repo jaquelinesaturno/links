@@ -855,6 +855,12 @@ body{padding-top:0}
 .produto-foto .foto-modelo{background:linear-gradient(160deg,#fde3ec,#fbf6f1 60%,#dcf0fc);color:rgba(17,17,17,.3)}
 .produtos-lista li:last-child .produto-foto{aspect-ratio:8/3;background:#dff2e6}
 .produtos-lista li:last-child .produto-foto img{object-fit:contain}
+/* fotos reais dos produtos: preenchem o espaço da foto, mostrando o rosto das crianças */
+.produtos .produtos-lista .produto-foto{background:#fff}
+.produtos .produtos-lista .produto-foto img{object-fit:cover !important;object-position:50% 50%}
+.produtos .produtos-lista li:nth-child(1) .produto-foto img{object-position:50% 25%}
+.produtos .produtos-lista li:nth-child(2) .produto-foto img{object-position:50% 20%}
+.produtos .produtos-lista li:nth-child(3) .produto-foto img{object-position:50% 45%}
 /* sem os circulinhos de ícone: o nome vem logo abaixo da imagem */
 .produto-foto + b{margin-top:14px}
 .produtos-lista b{padding:0 10px;font-family:var(--titulo);font-size:15px;line-height:1.2;color:var(--tinta)}
@@ -1127,23 +1133,23 @@ body{padding-top:0}
     <h2 class="produtos-titulo">O que vendemos</h2>
     <ul class="produtos-lista">
       <li><a class="js-whats-msg" data-msg="Oi! Vim pelo Instagram e quero ver a moda feminina (1 a 16 anos)." href="#conversar" target="_blank" rel="noopener">
-        <span class="produto-foto"><img src="fotos/produto-moda-feminina.svg" alt="Ilustração de vestido rosa" loading="lazy"></span>
+        <span class="produto-foto"><img src="fotos/foto-moda-feminina.jpg" alt="Duas meninas com camisetas estampadas e shorts" loading="lazy"></span>
         <b>Moda feminina</b><small>Infantil e juvenil, de 1 a 16 anos</small>
       </a></li>
       <li><a class="js-whats-msg" data-msg="Oi! Vim pelo Instagram e quero ver a moda masculina (1 a 16 anos)." href="#conversar" target="_blank" rel="noopener">
-        <span class="produto-foto"><img src="fotos/produto-moda-masculina.svg" alt="Ilustração de camiseta azul" loading="lazy"></span>
+        <span class="produto-foto"><img src="fotos/foto-moda-masculina.jpg" alt="Dois meninos com camiseta e bermuda" loading="lazy"></span>
         <b>Moda masculina</b><small>Infantil e juvenil, de 1 a 16 anos</small>
       </a></li>
       <li><a class="js-whats-msg" data-msg="Oi! Vim pelo Instagram e quero ver os calçados." href="#conversar" target="_blank" rel="noopener">
-        <span class="produto-foto"><img src="fotos/produto-calcados.svg" alt="Ilustração de um par de tênis" loading="lazy"></span>
+        <span class="produto-foto"><img src="fotos/foto-calcados.jpg" alt="Tênis infantis rosa e preto" loading="lazy"></span>
         <b>Calçados</b><small>Do número 17 ao 33</small>
       </a></li>
       <li><a class="js-whats-msg" data-msg="Oi! Vim pelo Instagram e quero ver os acessórios femininos." href="#conversar" target="_blank" rel="noopener">
-        <span class="produto-foto"><img src="fotos/produto-acessorios-femininos.svg" alt="Ilustração de laço e presilhas" loading="lazy"></span>
+        <span class="produto-foto"><img src="fotos/foto-acessorios-femininos.jpg" alt="Bolsinhas matelassê branca, dourada e vermelha" loading="lazy"></span>
         <b>Acessórios femininos</b><small>Para as meninas</small>
       </a></li>
       <li><a class="js-whats-msg" data-msg="Oi! Vim pelo Instagram e quero ver os acessórios masculinos." href="#conversar" target="_blank" rel="noopener">
-        <span class="produto-foto"><img src="fotos/produto-acessorios-masculinos.svg" alt="Ilustração de boné e óculos escuros" loading="lazy"></span>
+        <span class="produto-foto"><img src="fotos/foto-acessorios-masculinos.jpg" alt="Bonés coloridos" loading="lazy"></span>
         <b>Acessórios masculinos</b><small>Para os meninos</small>
       </a></li>
     </ul>
