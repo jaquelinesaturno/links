@@ -1271,10 +1271,27 @@ const copiaDepo = trilhoDepo.firstElementChild.cloneNode(true);
 copiaDepo.setAttribute("aria-hidden", "true");
 trilhoDepo.appendChild(copiaDepo);
 // Caixinhas depois da capa (celular): as setas passam uma caixinha para o lado
-document.querySelectorAll(".info-seta").forEach(b => b.addEventListener("click", () => {
-  const lista = document.querySelector(".info-lista"), c = lista.querySelector(".info-caixa");
-  lista.scrollBy({ left: Number(b.dataset.dir) * (c.getBoundingClientRect().width + 12), behavior: "smooth" });
-}));
+// e também passam sozinhas, uma por vez (volta para a primeira no fim); param um pouco quando a pessoa mexe
+(() => {
+  const lista = document.querySelector(".info-lista");
+  if (!lista) return;
+  const celular = matchMedia("(max-width:959px)"), parado = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let espera = 0;
+  const largura = () => lista.clientWidth;
+  const atual = () => Math.round(lista.scrollLeft / largura());
+  const total = () => lista.querySelectorAll(".info-caixa").length;
+  const vai = i => lista.scrollTo({ left: ((i + total()) % total()) * largura(), behavior: "smooth" });
+  document.querySelectorAll(".info-seta").forEach(b => b.addEventListener("click", () => {
+    espera = Date.now() + 7000; vai(atual() + Number(b.dataset.dir));
+  }));
+  ["touchstart", "pointerdown", "wheel"].forEach(ev => lista.addEventListener(ev, () => espera = Date.now() + 7000, { passive: true }));
+  setInterval(() => {
+    if (!celular.matches || parado || document.hidden || Date.now() < espera) return;
+    const r = lista.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return; // só passa quando está na tela
+    vai(atual() + 1);
+  }, 4000);
+})();
 // Rolagem: anda devagar sozinha; para quando o mouse está em cima; as setas pulam um cartão para o lado
 (() => {
   const faixa = trilhoDepo.parentElement;
