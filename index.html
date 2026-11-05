@@ -1335,7 +1335,7 @@ trilhoDepo.appendChild(copiaDepo);
   }));
   ["touchstart", "pointerdown", "wheel"].forEach(ev => lista.addEventListener(ev, () => espera = Date.now() + 7000, { passive: true }));
   setInterval(() => {
-    if (!celular.matches || parado || document.hidden || Date.now() < espera) return;
+    if (!celular.matches || document.hidden || Date.now() < espera) return;
     const r = lista.getBoundingClientRect();
     if (r.bottom < 0 || r.top > innerHeight) return; // só passa quando está na tela
     vai(atual() + 1);
