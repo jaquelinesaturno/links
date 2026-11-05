@@ -1166,6 +1166,15 @@ const faixaTrilho = document.querySelector(".faixa-trilho");
 faixaTrilho.innerHTML = faixaTrilho.innerHTML.repeat(6);
 faixaTrilho.querySelectorAll(".faixa-item").forEach((el, i) => { if (i >= 3) el.setAttribute("aria-hidden", "true"); });
 
+// Grupo VIP: cada letra do título vira um pedacinho que pula (o leitor de tela lê o título inteiro)
+const vipTitulo = document.querySelector(".grupo-vip h2");
+function letrasVip(txt) {
+  if (!vipTitulo) return;
+  vipTitulo.setAttribute("aria-label", txt);
+  vipTitulo.innerHTML = [...txt].map((c, i) => c === " " ? '<span class="vl-esp" aria-hidden="true"> </span>' : `<span class="vl" style="--i:${i}" aria-hidden="true">${c}</span>`).join("");
+}
+letrasVip("Grupo VIP");
+
 const textos = [];
 [document.querySelector(".faixa-avisos"), document.querySelector(".topo"), document.querySelector("main"), document.querySelector(".contato-final"),document.querySelector(".assinatura"), document.querySelector(".nav")].forEach(raiz => {
   const w = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT);
