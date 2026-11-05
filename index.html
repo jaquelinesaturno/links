@@ -1116,7 +1116,7 @@ faixaTrilho.innerHTML = faixaTrilho.innerHTML.repeat(6);
 faixaTrilho.querySelectorAll(".faixa-item").forEach((el, i) => { if (i >= 3) el.setAttribute("aria-hidden", "true"); });
 
 const textos = [];
-[document.querySelector(".faixa-avisos"), document.querySelector(".topo"), document.querySelector("main"), document.querySelector(".conversar"), document.querySelector(".assinatura"), document.querySelector(".nav")].forEach(raiz => {
+[document.querySelector(".faixa-avisos"), document.querySelector(".topo"), document.querySelector("main"), document.querySelector(".contato-final"),document.querySelector(".assinatura"), document.querySelector(".nav")].forEach(raiz => {
   const w = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT);
   for (let n; (n = w.nextNode());) {
     const pt = n.nodeValue.trim();
