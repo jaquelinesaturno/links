@@ -372,22 +372,6 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
 .janela-jaque{z-index:1;width:68%;margin-top:-30px;transform:rotate(-3deg)}
 .janela-jaque img{aspect-ratio:4/3}
 .sobre-selo{position:absolute;z-index:2;left:2%;top:3%;width:27%;aspect-ratio:1;border-radius:50%;border:4px solid #fff;box-shadow:0 12px 24px -14px rgba(17,17,17,.5);object-fit:cover}
-/* adesivo: borda branca grossa, sombra baixinha de adesivo colado, brilho e a pontinha de baixo descolando */
-.adesivo{display:block;border:6px solid #fff;background:#fff;transform:rotate(-9deg);
-  box-shadow:0 1px 1px rgba(0,0,0,.12),0 6px 14px -6px rgba(0,0,0,.35)}
-.adesivo img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover}
-.adesivo::before{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;
-  background:linear-gradient(125deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 70%,rgba(255,255,255,.25) 100%)}
-.adesivo::after{content:"";position:absolute;right:4%;bottom:4%;width:26%;height:26%;border-radius:0 0 100% 0;pointer-events:none;
-  background:linear-gradient(135deg,#d9d9d9 0%,#fff 55%,#f1f1f1 100%);box-shadow:-3px -3px 6px -2px rgba(0,0,0,.25);transform:rotate(180deg);transform-origin:center}
-/* "colando": o adesivo chega meio levantado e assenta na tela quando a parte aparece */
-#historia:not(.visivel) .adesivo{opacity:0}
-#historia.visivel .adesivo{animation:cola-adesivo .9s cubic-bezier(.2,.9,.3,1.25) .25s both}
-@keyframes cola-adesivo{
-  0%{opacity:0;transform:translate(14px,-24px) rotate(-26deg) scale(1.35);box-shadow:0 30px 30px -10px rgba(0,0,0,.25)}
-  60%{opacity:1;transform:translate(0,0) rotate(-7deg) scale(.96)}
-  100%{opacity:1;transform:rotate(-9deg) scale(1)}}
-@media (prefers-reduced-motion:reduce){ #historia.visivel .adesivo{animation:none} #historia:not(.visivel) .adesivo{opacity:1} }
 /* bonequinhos no canto de baixo à direita da parte "Nossa história" */
 .sobre-bonecos{position:absolute;z-index:3;right:40px;bottom:6px;width:110px;pointer-events:none}
 .boneco-base{display:block;width:100%;height:auto}
@@ -869,7 +853,8 @@ body{padding-top:0}
 .info-caixa{display:flex;flex-direction:column;align-items:center;padding:22px 18px 20px;border-radius:22px;background:#fbf6f1;text-align:center}
 .info-rotulo{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7a6a5e}
 .info-icone{width:54px;height:54px;margin:14px 0 10px}
-.info-caixa h3{margin:0;font-size:21px;line-height:1.15;color:var(--tinta)}
+/* títulos no rosa e links no azul, iguais às cores do título da capa */
+.info-caixa h3{margin:0;font-size:21px;line-height:1.15;color:#f0457a}
 .info-caixa p{margin:8px 0 0;max-width:260px;font-size:13px;line-height:1.5;color:#5d5550}
 .info-link{margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f0457a;text-decoration:none}
 .info-link:hover{text-decoration:underline}
@@ -1143,8 +1128,7 @@ body{padding-top:0}
         <div class="sobre-fotos">
           <figure class="janela janela-familia"><span class="janela-barra" aria-hidden="true"><i></i><i></i><i></i></span><img src="fotos/familia.jpg" alt="Jaqueline Saturno com o marido e os quatro filhos" loading="lazy"></figure>
           <figure class="janela janela-jaque"><span class="janela-barra" aria-hidden="true"><i></i><i></i><i></i></span><img src="fotos/jaqueline.jpg" alt="Jaqueline Saturno, fundadora da Pequenos Aprendizes" loading="lazy"></figure>
-          <!-- logo como adesivo: borda branca, brilho, pontinha descolando e uma animação de "colar" quando aparece -->
-          <span class="sobre-selo adesivo"><img src="fotos/logo-redondo.jpg" alt="Logo Pequenos Aprendizes Moda Infantil" loading="lazy"></span>
+          <img class="sobre-selo" src="fotos/logo-redondo.jpg" alt="Logo Pequenos Aprendizes Moda Infantil" loading="lazy">
           <svg class="sobre-flor" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 30C26 18 24 6 30 4s4 14 0 26c4-12 12-22 18-18s-6 14-18 18c12-2 26 0 26 6s-14 6-26-6c10 8 16 20 10 22s-10-10-10-22c0 12-4 24-10 22s0-14 10-22C20 36 6 38 4 32s12-8 26-2C18 26 8 16 12 12s12 6 18 18z" fill="none" stroke="#f0457a" stroke-width="2.2" stroke-linejoin="round"/></svg>
         </div>
       </div>
