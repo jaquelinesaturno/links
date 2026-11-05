@@ -314,12 +314,18 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
 /* sobre mim de canto a canto (sem foto) */
 .sobre-mim{display:grid;gap:6px;margin-top:40px}
 .sobre-mim h2{margin-bottom:6px}
-/* "Nossa história": faixa rosa da logo de ponta a ponta, com o quadro branco do texto por cima */
-#historia{position:relative;isolation:isolate;margin-top:40px;padding-top:44px;padding-bottom:44px}
-#historia::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#ff86ab}
+/* espaço branco de ponta a ponta entre "O que vendemos" e "Nossa história", com um risco ondulado rosa da logo */
+.risco-onda{position:relative;height:56px}
+.risco-onda::before{content:"";position:absolute;top:-2px;bottom:-1px;left:50%;width:100vw;transform:translateX(-50%);background:#fff}
+.risco-onda::after{content:"";position:absolute;left:50%;top:50%;width:min(900px,86%);height:16px;transform:translate(-50%,-50%);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 16'%3E%3Cpath d='M0 8 Q10 0 20 8 T40 8' fill='none' stroke='%23f0457a' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x center/40px 16px}
+@media (min-width:960px){ .risco-onda{height:80px} }
+/* "Nossa história": faixa azul da logo de ponta a ponta, com o quadro branco do texto por cima */
+#historia{position:relative;isolation:isolate;margin-top:0;padding-top:44px;padding-bottom:44px}
+#historia::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#6cc4f4}
 #historia .sobre-mim{margin-top:0}
 @media (min-width:960px){
-  #historia{margin-top:56px;padding-top:52px;padding-bottom:52px}
+  #historia{margin-top:0;padding-top:52px;padding-bottom:52px}
   /* quadro branco um pouco menor */
   #historia .sobre-mim{max-width:1060px;margin:0 auto;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:36px;padding:32px 38px}
   #historia .sobre-texto p{margin-bottom:10px}
