@@ -1256,6 +1256,11 @@ const trilhoDepo = document.getElementById("trilhoDepo");
 const copiaDepo = trilhoDepo.firstElementChild.cloneNode(true);
 copiaDepo.setAttribute("aria-hidden", "true");
 trilhoDepo.appendChild(copiaDepo);
+// Caixinhas depois da capa (celular): as setas passam uma caixinha para o lado
+document.querySelectorAll(".info-seta").forEach(b => b.addEventListener("click", () => {
+  const lista = document.querySelector(".info-lista"), c = lista.querySelector(".info-caixa");
+  lista.scrollBy({ left: Number(b.dataset.dir) * (c.getBoundingClientRect().width + 12), behavior: "smooth" });
+}));
 // Rolagem: anda devagar sozinha; para quando o mouse está em cima; as setas pulam um cartão para o lado
 (() => {
   const faixa = trilhoDepo.parentElement;
