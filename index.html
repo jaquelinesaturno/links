@@ -508,6 +508,32 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
   .contato-painel{position:absolute;right:0;top:50%;width:400px;margin:0;padding:28px 22px 22px;transform:translateY(-50%)}
   .contato-painel h2{font-size:40px}
 }
+/* parte final nova: fundo branco de ponta a ponta, pílula com setinhas e dois quadros (loja com mapa | contatos) */
+.contato-final{isolation:isolate;margin:0 auto;padding:56px 0 50px}
+.contato-final::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#fff}
+.contato-topo{display:flex;align-items:flex-end;justify-content:center;gap:10px;margin-bottom:6px}
+.contato-pilula{display:inline-block;margin-bottom:28px;padding:7px 20px;border-radius:999px;background:#ffd3e1;color:#d92d62;font:800 20px/1.2 var(--titulo)}
+.contato-curva{width:70px;height:auto;fill:none;stroke:#6cc4f4;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.contato-curva-dir{transform:scaleX(-1)}
+.contato-quadros{display:grid;gap:16px;padding:0 var(--gutter)}
+.contato-quadro{display:flex;flex-direction:column;align-items:center;padding:26px 18px 20px;border-radius:26px;background:#fdf1e6;text-align:center}
+.contato-icone{display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:#f0457a}
+.contato-icone svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linejoin:round}
+.contato-quadro h2{margin:12px 0 6px;font-size:26px;color:var(--tinta)}
+.contato-quadro p{margin:0 0 16px;font-size:13px;line-height:1.55;color:#5d5550}
+.contato-quadro .mapa-quadro{width:100%;height:220px;margin:0 0 12px;border-radius:16px;box-shadow:none}
+.contato-linha{display:flex;justify-content:space-between;align-items:center;width:100%;padding:12px 18px;border-radius:999px;background:#fff;color:var(--tinta);font-size:13.5px;font-weight:600;text-decoration:none}
+.contato-quadro .contato-lista{width:100%;text-align:left}
+.contato-quadro .contato-lista a{background:#fff;border-radius:999px;padding:8px 16px 8px 8px}
+.contato-quadro .contato-lista i{width:38px;height:38px}
+@media (min-width:960px){
+  .contato-final{max-width:1060px;margin-top:0;padding:70px 0 64px}
+  .contato-curva{width:100px}
+  .contato-quadros{grid-template-columns:1fr 1fr;gap:26px}
+  .contato-quadro{padding:34px 30px 28px}
+  .contato-quadro h2{font-size:30px}
+  .contato-quadro .mapa-quadro{height:230px;margin-right:0}
+}
 .assinatura{max-width:1220px;margin:18px auto 0;text-align:center;font-family:var(--sans);font-size:13px;font-weight:500;color:#555555}
 
 
@@ -1089,21 +1115,34 @@ body{padding-top:0}
 <!-- ================= PARTE FINAL: mapa da loja com o endereço por cima e os contatos ao lado ================= -->
 <!-- EDITAR: troque o endereço e o horário abaixo, e o "q=" do mapa e do "Como chegar" pelo endereço completo da loja -->
 <footer class="contato-final" id="conversar">
-  <div class="mapa-quadro">
-    <iframe class="mapa" title="Mapa da loja Pequenos Aprendizes" src="https://maps.google.com/maps?q=R.%20Cunha%20Moreira%2C%2053%20-%20Centro%2C%20Itanha%C3%A9m%20-%20SP%2C%2011740-038&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <div class="mapa-cartao">
-      <p><b>Pequenos Aprendizes</b> · R. Cunha Moreira, 53, Centro, Itanhaém/SP</p>
-      <p class="mapa-hora">Segunda a sábado, das 9h às 19h</p>
-      <a class="mapa-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.%20Cunha%20Moreira%2C%2053%20-%20Centro%2C%20Itanha%C3%A9m%20-%20SP%2C%2011740-038" target="_blank" rel="noopener">Como chegar ↗</a>
-    </div>
+  <!-- título em pílula com duas setinhas desenhadas apontando para os quadros -->
+  <div class="contato-topo">
+    <svg class="contato-curva" viewBox="0 0 110 60" aria-hidden="true"><path d="M104 14C80 4 62 10 58 24c-3 11 9 15 13 6 4-10-10-16-24-8C32 30 20 42 12 52M12 52l-1-13M12 52l12-3"/></svg>
+    <span class="contato-pilula">Fale com a gente</span>
+    <svg class="contato-curva contato-curva-dir" viewBox="0 0 110 60" aria-hidden="true"><path d="M104 14C80 4 62 10 58 24c-3 11 9 15 13 6 4-10-10-16-24-8C32 30 20 42 12 52M12 52l-1-13M12 52l12-3"/></svg>
   </div>
-  <div class="contato-painel">
-    <h2>Vamos conversar?</h2>
-    <ul class="contato-lista">
+  <div class="contato-quadros">
+    <!-- quadro 1: a loja e o mapa -->
+    <div class="contato-quadro">
+      <span class="contato-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg></span>
+      <h2>Nossa loja</h2>
+      <p>R. Cunha Moreira, 53, Centro, Itanhaém/SP<br>Segunda a sábado, das 9h às 19h</p>
+      <div class="mapa-quadro">
+        <iframe class="mapa" title="Mapa da loja Pequenos Aprendizes" src="https://maps.google.com/maps?q=R.%20Cunha%20Moreira%2C%2053%20-%20Centro%2C%20Itanha%C3%A9m%20-%20SP%2C%2011740-038&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <a class="contato-linha" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.%20Cunha%20Moreira%2C%2053%20-%20Centro%2C%20Itanha%C3%A9m%20-%20SP%2C%2011740-038" target="_blank" rel="noopener"><span>Como chegar</span><b aria-hidden="true">↗</b></a>
+    </div>
+    <!-- quadro 2: contatos -->
+    <div class="contato-quadro">
+      <span class="contato-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4c4.7 0 8.5 3.2 8.5 7.2s-3.8 7.2-8.5 7.2c-1 0-2-.1-2.9-.4L5 20l1-3.6c-1.5-1.3-2.5-3.1-2.5-5.2C3.5 7.2 7.3 4 12 4z"/></svg></span>
+      <h2>Vamos conversar?</h2>
+      <p>Chame a gente pelo canal que preferir.</p>
+      <ul class="contato-lista">
       <li><a class="js-whats" href="#conversar" target="_blank" rel="noopener"><i class="ci-whats"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whats"/></svg></i><span><b>WhatsApp</b><small>(13) 98819-5878</small></span><em aria-hidden="true">↗</em></a></li>
       <li><a href="mailto:pequenosaprendizes01@gmail.com"><i class="ci-mail"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></i><span><b>E-mail</b><small>pequenosaprendizes01@gmail.com</small></span><em aria-hidden="true">↗</em></a></li>
       <li><a href="https://www.instagram.com/pequeno_aprendizes/" target="_blank" rel="noopener"><i class="ci-insta"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-insta"/></svg></i><span><b>Instagram</b><small>@pequeno_aprendizes</small></span><em aria-hidden="true">↗</em></a></li>
-    </ul>
+      </ul>
+    </div>
   </div>
 </footer>
 <!-- assinatura fora do quadro -->
