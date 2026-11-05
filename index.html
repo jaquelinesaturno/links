@@ -738,7 +738,8 @@ body{padding-top:0}
 .vip-faixa{position:relative;margin-top:-34px;padding-top:30px;padding-bottom:26px;--rosa-comeca:56px}
 .vip-faixa .grupo-vip h2{white-space:nowrap}
 @media (max-width:959px){ .vip-faixa .grupo-vip h2{font-size:26px} }
-@media (min-width:960px){ .vip-faixa{margin-top:-36px;padding-top:44px;padding-bottom:44px;--rosa-comeca:86px} }
+/* rosa em cima do quadro azul = rosa embaixo (40px no computador, 26px no celular) */
+@media (min-width:960px){ .vip-faixa{margin-top:-36px;padding-top:44px;padding-bottom:40px;--rosa-comeca:76px} }
 .vip-faixa::before{content:"";position:absolute;z-index:0;top:var(--rosa-comeca);bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#f6e4e1}
 .vip-faixa .grupo-vip{z-index:1}
 .vip-enfeites{display:none}
