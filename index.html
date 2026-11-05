@@ -535,7 +535,8 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
 /* "Fale com a gente": só o texto em azul, sem a caixinha rosa */
 .contato-pilula{display:inline-block;margin-bottom:28px;padding:7px 6px;background:none;color:#1a8fd6;font:800 24px/1.2 var(--titulo)}
 .contato-pilula{white-space:nowrap}
-@media (max-width:959px){ .contato-pilula{font-size:17px;margin-bottom:22px}.contato-topo{gap:4px} }
+/* celular: "Fale com a gente" do tamanho de "O que nossos clientes dizem", sem as setinhas desenhadas */
+@media (max-width:959px){ .contato-pilula{font-size:24px;margin-bottom:18px}.contato-topo{gap:4px}.contato-curva{display:none} }
 .contato-curva{flex:none;width:52px;height:auto;fill:none;stroke:#6cc4f4;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .contato-curva-dir{transform:scaleX(-1)}
 .contato-quadros{display:grid;gap:16px;padding:0 var(--gutter)}
