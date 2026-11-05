@@ -524,6 +524,9 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
 .contato-quadro .mapa-quadro{width:100%;height:220px;margin:0 0 12px;border-radius:16px;box-shadow:none}
 /* mapa maior que o quadro, sobrando igual em cima e embaixo: o quadrinho do Google fica escondido e o pino fica no meio */
 .contato-quadro .mapa{top:-170px;height:calc(100% + 340px)}
+/* pino rosa no centro do mapa (o mapa é centralizado no endereço da loja) */
+.contato-quadro .mapa-quadro::after{content:"";position:absolute;left:50%;top:50%;width:30px;height:40px;transform:translate(-50%,-100%);pointer-events:none;filter:drop-shadow(0 4px 4px rgba(0,0,0,.3));
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40'%3E%3Cpath d='M15 39S2 24 2 14a13 13 0 0 1 26 0c0 10-13 25-13 25z' fill='%23f0457a' stroke='%23fff' stroke-width='2'/%3E%3Ccircle cx='15' cy='14' r='5' fill='%23fff'/%3E%3C/svg%3E") no-repeat center/contain}
 .contato-linha{display:flex;justify-content:space-between;align-items:center;width:100%;padding:12px 18px;border-radius:999px;background:#fff;color:var(--tinta);font-size:13.5px;font-weight:600;text-decoration:none}
 .contato-quadro .contato-lista{width:100%;text-align:left}
 .contato-quadro .contato-lista a{background:#fff;border-radius:999px;padding:8px 16px 8px 8px}
