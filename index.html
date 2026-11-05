@@ -682,8 +682,9 @@ body{padding-top:0}
 }
 
 /* ---------- nossos produtos: cartões com foto, ícone redondo por cima, nome e frase ---------- */
-/* "Nossos produtos" fica no fundo bege (fora do cartão branco), igual aos depoimentos */
-.produtos{padding-top:40px;padding-bottom:36px}
+/* "Nossos produtos" com fundo branco de ponta a ponta (logo depois da onda do grupo VIP) */
+.produtos{position:relative;isolation:isolate;padding-top:40px;padding-bottom:36px}
+.produtos::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#fff}
 .produtos .produtos-lista a{background:#fff}
 .produtos-titulo{text-align:center;font-size:30px;color:#1a8fd6}
 .produtos-titulo::after{content:"";display:block;width:44px;height:3px;margin:12px auto 0;border-radius:3px;background:#f0457a}
