@@ -734,20 +734,21 @@ body{padding-top:0}
   .info-caixa h3{font-size:24px}
 }
 /* faixa rosada clarinha de ponta a ponta com o quadro do grupo VIP dentro */
-.vip-faixa{position:relative;margin-top:30px;padding-top:30px;padding-bottom:44px}
-@media (min-width:960px){ .vip-faixa{margin-top:44px;padding-top:44px;padding-bottom:56px} }
+/* em cima fica branco (com os rabiscos e a mão da menina); o rosa começa um pouco acima do quadro azul */
+.vip-faixa{position:relative;margin-top:14px;padding-top:30px;padding-bottom:30px;--rosa-comeca:74px}
+@media (min-width:960px){ .vip-faixa{margin-top:20px;padding-top:44px;padding-bottom:40px;--rosa-comeca:84px} }
 .vip-faixa .grupo-vip{z-index:1}
 .vip-enfeites{position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);overflow:hidden;pointer-events:none;
-  background:#f6e4e1}
-/* rabiscos em zigue-zague bem clarinhos nos cantos, como pincel */
+  background:linear-gradient(180deg,#fff var(--rosa-comeca),#f6e4e1 var(--rosa-comeca))}
+/* rabiscos em zigue-zague bem clarinhos, na parte branca de cima */
 .rb{position:absolute;display:block;overflow:visible}
 .rb path{fill:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
-.rb1{left:6%;top:8%;width:64px}.rb1 path{stroke:#fff}
-.rb2{right:6%;top:12%;width:38px}.rb2 path{stroke:#c6e6f6}
-.rb3{left:3%;bottom:10%;width:62px}.rb3 path{stroke:#f5df9a}
-.rb4{right:4%;bottom:8%;width:42px}.rb4 path{stroke:#fff}
+.rb1{left:5%;top:14px;width:58px}.rb1 path{stroke:#fcd3dc}
+.rb2{right:22%;top:8px;width:34px}.rb2 path{stroke:#cfeaf6}
+.rb3{left:50%;top:16px;width:56px}.rb3 path{stroke:#f6e6a8}
+.rb4{right:5%;top:10px;width:38px}.rb4 path{stroke:#fcd3dc}
 @media (max-width:959px){
-  .rb1{width:42px;left:3%;top:4%}.rb2{width:26px;right:4%;top:6%}.rb3{width:40px;bottom:4%}.rb4{width:28px;bottom:3%}
+  .rb1{width:38px;left:3%;top:10px}.rb2{width:22px;right:26%;top:6px}.rb3{width:36px;left:58%;top:12px}.rb4{width:24px;right:3%;top:8px}
 }
 /* movimentos do grupo VIP: letras tremendo e a setinha clicando no botão (as crianças ficam paradas) */
 /* título igual ao vídeo: cada letra num ângulo e altura diferente, "tremendo" quadro a quadro */
