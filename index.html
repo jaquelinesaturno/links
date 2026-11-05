@@ -1316,12 +1316,20 @@ trilhoDepo.appendChild(copiaDepo);
 (() => {
   const lista = document.querySelector(".info-lista");
   if (!lista) return;
-  const celular = matchMedia("(max-width:959px)"), parado = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let espera = 0;
+  const celular = matchMedia("(max-width:959px)");
+  let espera = 0, volta = 0;
   const largura = () => lista.clientWidth;
   const atual = () => Math.round(lista.scrollLeft / largura());
   const total = () => lista.querySelectorAll(".info-caixa").length;
-  const vai = i => lista.scrollTo({ left: ((i + total()) % total()) * largura(), behavior: "smooth" });
+  // no iPhone o "scrollTo suave" às vezes não anda com o encaixe ligado: desliga o encaixe durante a passada e liga de novo depois
+  const vai = i => {
+    const x = ((i + total()) % total()) * largura();
+    clearTimeout(volta);
+    lista.style.scrollSnapType = "none";
+    lista.style.scrollBehavior = "smooth";
+    lista.scrollLeft = x;
+    volta = setTimeout(() => { lista.style.scrollSnapType = ""; lista.style.scrollBehavior = ""; lista.scrollLeft = x; }, 800);
+  };
   document.querySelectorAll(".info-seta").forEach(b => b.addEventListener("click", () => {
     espera = Date.now() + 7000; vai(atual() + Number(b.dataset.dir));
   }));
