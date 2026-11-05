@@ -278,12 +278,22 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
 .vitrines a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 12px 12px 16px;border-radius:16px;background:var(--manteiga);font-size:14px;font-weight:700;transition:transform .2s}
 .vitrines a:hover{transform:translateY(-2px)}
 .vitrines i{width:30px;height:30px;border-radius:50%;background:var(--tinta);color:#fff;display:grid;place-items:center;font-style:normal;font-size:13px}
-/* depoimentos */
-#depoimentos{margin-top:40px}
-.depo-faixa{margin:0 calc(50% - 50vw);overflow:hidden}
-.depo-trilho{display:flex;width:max-content;animation:rolar 120s linear infinite}
-#depoimentos .produtos-titulo{margin-bottom:22px}
-.depo-estrelas{margin-bottom:8px;font-size:17px;letter-spacing:2px;color:#ffb703}
+/* depoimentos: faixa azul clarinha de ponta a ponta com ondinhas em cima e embaixo */
+#depoimentos{position:relative;isolation:isolate;margin-top:70px;margin-bottom:40px;padding-top:30px;padding-bottom:30px}
+#depoimentos::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#dcf0fc}
+#depoimentos::after{content:"";position:absolute;z-index:-1;top:-22px;bottom:-22px;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 23'%3E%3Cpath d='M0 23V12Q20 0 40 12T80 12V23Z' fill='%23dcf0fc'/%3E%3C/svg%3E") repeat-x left top/80px 23px,
+             url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 23'%3E%3Cpath d='M0 0V11Q20 23 40 11T80 11V0Z' fill='%23dcf0fc'/%3E%3C/svg%3E") repeat-x left bottom/80px 23px}
+.depo-titulo{margin:0 0 20px;text-align:center;font-size:24px;line-height:1.2}
+.depo-titulo span{display:inline-block;padding:6px 18px;border-radius:999px;background:#fff;color:#1a8fd6}
+/* as avaliações rolam dentro de uma janela, com setas dos lados */
+.depo-carrossel{position:relative;display:flex;align-items:center;gap:8px}
+.depo-faixa{flex:1;min-width:0;overflow:hidden}
+.depo-trilho{display:flex;width:max-content;will-change:transform}
+.depo-seta{flex:none;display:grid;place-items:center;width:38px;height:38px;border:0;border-radius:50%;background:#fff;color:#1a8fd6;font-size:18px;font-weight:700;cursor:pointer;box-shadow:0 8px 18px -10px rgba(17,17,17,.4);transition:transform .2s}
+.depo-seta:hover{transform:scale(1.08)}
+@media (max-width:959px){ .depo-carrossel{gap:4px}.depo-seta{width:32px;height:32px;font-size:15px} }
+.depo-estrelas{margin-bottom:6px;font-size:14px;letter-spacing:2px;color:#ffb703}
 .depo figcaption i{grid-row:span 2;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--capa-rosa,#f0457a);color:#fff;font:800 16px/1 var(--titulo);font-style:normal}
 .depo:nth-child(3n+2) figcaption i{background:#1a8fd6}
 .depo:nth-child(3n) figcaption i{background:#9b5cd6}
