@@ -705,8 +705,8 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
 .capa-infantil .capa-foto{background:var(--capa-fundo)}
 .capa-infantil .capa-foto::after{display:none}
 .capa-infantil .capa-arco{display:none}
-/* celular: foto embaixo do texto (recorte do meio, onde estão as crianças), esfumada no alto */
-.capa-infantil .capa-foto > img{top:auto;right:0;bottom:0;left:0;width:100%;height:auto;aspect-ratio:6/5;object-fit:cover;object-position:55% 50%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 22%);mask-image:linear-gradient(180deg,transparent,#000 22%)}
+/* celular: foto embaixo do texto (recorte do meio, onde estão as crianças), esfumada no alto bem aos poucos, sem marcar onde a foto começa */
+.capa-infantil .capa-foto > img{top:auto;right:0;bottom:0;left:0;width:100%;height:auto;aspect-ratio:6/5;object-fit:cover;object-position:55% 50%;-webkit-mask-image:linear-gradient(180deg,transparent 4%,rgba(0,0,0,.12) 12%,rgba(0,0,0,.38) 21%,rgba(0,0,0,.72) 30%,#000 40%);mask-image:linear-gradient(180deg,transparent 4%,rgba(0,0,0,.12) 12%,rgba(0,0,0,.38) 21%,rgba(0,0,0,.72) 30%,#000 40%)}
 /* nuvens brancas no fim da capa */
 .capa-nuvens{position:absolute;z-index:2;left:0;right:0;bottom:-1px;width:100%;height:64px;pointer-events:none;overflow:visible}
 /* caixa com o mesmo tamanho e posição da foto da capa, para o aviãozinho cair no lugar certo, acima da nuvem */
