@@ -348,9 +348,10 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
   /* fotos uma do lado da outra: família à esquerda, Jaqueline à direita um pouco mais baixa */
   #historia .sobre-fotos{max-width:none;margin-top:26px;padding:10px 0 46px;display:flex;align-items:flex-start;gap:16px}
   #historia .janela-familia{flex:0 0 44%;width:auto;margin:0;transform:rotate(-3deg)}
-  #historia .janela-jaque{flex:1;width:auto;margin:70px 0 0;transform:rotate(3deg)}
-  #historia .sobre-selo{left:auto;right:4%;top:-8px;width:20%}
-  #historia .sobre-bonecos{right:-2%;bottom:-6px;width:26%}
+  #historia .janela-jaque{flex:1;width:auto;margin:118px 0 0;transform:rotate(3deg)}
+  /* logo centralizado em cima da foto da Jaqueline, sem encostar nela */
+  #historia .sobre-selo{left:auto;right:17%;top:0;width:20%}
+  #historia .sobre-bonecos{width:160px;right:calc((100% - 100vw) / 2 + 24px);bottom:10px}
   #historia .sobre-flor{left:-3%;top:auto;bottom:4px;width:9%}
 }
 /* fotos do sobre nós: duas janelinhas de navegador (família em cima à direita, Jaqueline embaixo à esquerda,
@@ -1012,6 +1013,7 @@ body{padding-top:0}
 
   <!-- ================= SOBRE MIM: de canto a canto, título de um lado e a história do outro (sem foto) ================= -->
   <section class="miolo revela" id="historia" aria-label="Nossa história">
+    <img class="sobre-bonecos" src="fotos/bonequinhos-grandes.png" alt="" loading="lazy">
     <div class="cartao-claro sobre-mim">
       <div class="sobre-titulo">
         <span class="rotulo">Prazer, somos a Pequenos Aprendizes</span>
@@ -1021,7 +1023,6 @@ body{padding-top:0}
           <figure class="janela janela-familia"><span class="janela-barra" aria-hidden="true"><i></i><i></i><i></i></span><img src="fotos/familia.jpg" alt="Jaqueline Saturno com o marido e os quatro filhos" loading="lazy"></figure>
           <figure class="janela janela-jaque"><span class="janela-barra" aria-hidden="true"><i></i><i></i><i></i></span><img src="fotos/jaqueline.jpg" alt="Jaqueline Saturno, fundadora da Pequenos Aprendizes" loading="lazy"></figure>
           <img class="sobre-selo" src="fotos/logo-redondo.jpg" alt="Logo Pequenos Aprendizes Moda Infantil" loading="lazy">
-          <img class="sobre-bonecos" src="fotos/bonequinhos-grandes.png" alt="" loading="lazy">
           <svg class="sobre-flor" viewBox="0 0 60 60" aria-hidden="true"><path d="M30 30C26 18 24 6 30 4s4 14 0 26c4-12 12-22 18-18s-6 14-18 18c12-2 26 0 26 6s-14 6-26-6c10 8 16 20 10 22s-10-10-10-22c0 12-4 24-10 22s0-14 10-22C20 36 6 38 4 32s12-8 26-2C18 26 8 16 12 12s12 6 18 18z" fill="none" stroke="#f0457a" stroke-width="2.2" stroke-linejoin="round"/></svg>
         </div>
       </div>
