@@ -660,7 +660,9 @@ body{padding-top:0}
 }
 
 /* ---------- nossos produtos: cartões com foto, ícone redondo por cima, nome e frase ---------- */
-.produtos{padding-top:18px;padding-bottom:36px}
+/* "Nossos produtos" fica no fundo bege (fora do cartão branco), igual aos depoimentos */
+.produtos{padding-top:40px;padding-bottom:36px}
+.produtos .produtos-lista a{background:#fff}
 .produtos-titulo{text-align:center;font-size:30px;color:#1a8fd6}
 .produtos-titulo::after{content:"";display:block;width:44px;height:3px;margin:12px auto 0;border-radius:3px;background:#f0457a}
 .produtos-lista{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 0;padding:0;list-style:none}
@@ -851,6 +853,10 @@ body{padding-top:0}
     </div>
   </section>
 
+  </div>
+
+  <!-- o resto da página fica no fundo bege -->
+  <div class="resto">
   <!-- ================= NOSSOS PRODUTOS: um cartão por categoria (cada um abre o WhatsApp com a mensagem pronta) ================= -->
   <!-- FOTOS: troque cada <div class="foto-modelo">Foto</div> por <img src="fotos/ARQUIVO.jpg" alt="..."> -->
   <section class="miolo produtos" id="produtos" aria-label="Nossos produtos">
@@ -883,10 +889,6 @@ body{padding-top:0}
       </a></li>
     </ul>
   </section>
-  </div>
-
-  <!-- o resto da página fica no fundo bege -->
-  <div class="resto">
 
   <!-- ================= SOBRE MIM: de canto a canto, título de um lado e a história do outro (sem foto) ================= -->
   <section class="miolo revela" id="historia" aria-label="Nossa história">
