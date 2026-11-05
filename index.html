@@ -733,22 +733,23 @@ body{padding-top:0}
   .info-icone{width:64px;height:64px;margin:18px 0 14px}
   .info-caixa h3{font-size:24px}
 }
-/* faixa rosada clarinha de ponta a ponta com o quadro do grupo VIP dentro */
-/* em cima fica branco (com os rabiscos e a mão da menina); o rosa começa um pouco acima do quadro azul */
-.vip-faixa{position:relative;margin-top:14px;padding-top:30px;padding-bottom:30px;--rosa-comeca:74px}
-@media (min-width:960px){ .vip-faixa{margin-top:20px;padding-top:44px;padding-bottom:40px;--rosa-comeca:84px} }
-.vip-faixa .grupo-vip{z-index:1}
-.vip-enfeites{position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);overflow:hidden;pointer-events:none;
-  background:linear-gradient(180deg,#fff var(--rosa-comeca),#f6e4e1 var(--rosa-comeca))}
-/* rabiscos em zigue-zague bem clarinhos, na parte branca de cima */
+/* grupo VIP: quadro rosa clarinho centralizado (mesma largura das caixinhas), com o quadro azul no meio;
+   a seção sobe para a mão da menina passar por cima da caixinha "Opções de pagamento" */
+.vip-faixa{position:relative;margin-top:-14px;padding-top:30px;padding-bottom:26px;--rosa-comeca:62px}
+@media (min-width:960px){ .vip-faixa{max-width:1060px;margin-top:-46px;padding-top:44px;padding-bottom:38px;--rosa-comeca:86px} }
+.vip-faixa::before{content:"";position:absolute;z-index:0;top:var(--rosa-comeca);bottom:0;left:var(--gutter);right:var(--gutter);border-radius:28px;background:#f6e4e1}
+.vip-faixa .grupo-vip{z-index:1;margin-left:16px;margin-right:16px}
+@media (min-width:960px){ .vip-faixa .grupo-vip{margin-left:auto;margin-right:auto;width:calc(100% - 80px)} }
+.vip-enfeites{position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);overflow:hidden;pointer-events:none}
+/* rabiscos em zigue-zague bem clarinhos, nas laterais brancas */
 .rb{position:absolute;display:block;overflow:visible}
 .rb path{fill:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
-.rb1{left:5%;top:14px;width:58px}.rb1 path{stroke:#fcd3dc}
-.rb2{right:22%;top:8px;width:34px}.rb2 path{stroke:#cfeaf6}
-.rb3{left:50%;top:16px;width:56px}.rb3 path{stroke:#f6e6a8}
-.rb4{right:5%;top:10px;width:38px}.rb4 path{stroke:#fcd3dc}
+.rb1{left:3%;top:30%;width:58px}.rb1 path{stroke:#fcd3dc}
+.rb3{left:5%;bottom:6%;width:56px}.rb3 path{stroke:#f6e6a8}
+.rb2{right:5%;top:28%;width:34px}.rb2 path{stroke:#cfeaf6}
+.rb4{right:3%;bottom:8%;width:38px}.rb4 path{stroke:#fcd3dc}
 @media (max-width:959px){
-  .rb1{width:38px;left:3%;top:10px}.rb2{width:22px;right:26%;top:6px}.rb3{width:36px;left:58%;top:12px}.rb4{width:24px;right:3%;top:8px}
+  .rb1,.rb4{display:none}.rb3{width:22px;left:1%;bottom:10%}.rb2{width:14px;right:1.5%;top:40%}
 }
 /* movimentos do grupo VIP: letras tremendo e a setinha clicando no botão (as crianças ficam paradas) */
 /* título igual ao vídeo: cada letra num ângulo e altura diferente, "tremendo" quadro a quadro */
