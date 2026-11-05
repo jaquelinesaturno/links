@@ -318,7 +318,14 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
 #historia{position:relative;isolation:isolate;margin-top:40px;padding-top:44px;padding-bottom:44px}
 #historia::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#ff86ab}
 #historia .sobre-mim{margin-top:0}
-@media (min-width:960px){ #historia{margin-top:56px;padding-top:64px;padding-bottom:64px} }
+@media (min-width:960px){
+  #historia{margin-top:56px;padding-top:52px;padding-bottom:52px}
+  /* quadro branco um pouco menor */
+  #historia .sobre-mim{max-width:1000px;margin:0 auto;gap:38px;padding:34px 40px}
+  #historia .sobre-mim h2{font-size:46px}
+  #historia .sobre-texto .sobre-abre{font-size:19px}
+  #historia .sobre-fotos{max-width:350px}
+}
 /* fotos do sobre nós: família grande, Jaqueline por cima no canto e o logo redondo de selo */
 .sobre-fotos{position:relative;margin:26px 0 30px;padding:0 0 70px 0;max-width:420px}
 .sobre-fotos img{display:block;border-radius:20px;object-fit:cover;box-shadow:0 18px 34px -22px rgba(17,17,17,.45)}
