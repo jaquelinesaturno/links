@@ -523,6 +523,9 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
 .contato-icone svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linejoin:round}
 .contato-quadro h2{margin:12px 0 6px;font-size:26px;color:var(--tinta)}
 .contato-quadro p{margin:0 0 16px;font-size:13px;line-height:1.55;color:#5d5550}
+/* a frase de cima tem sempre 2 linhas de altura nos dois quadros: o WhatsApp começa na mesma altura do mapa */
+.contato-quadro > p:not(.contato-recado){min-height:calc(2 * 1.55em)}
+.contato-recado{margin:auto 0 0 !important;padding-top:18px;max-width:320px;font:700 16px/1.4 var(--titulo) !important;color:#f0457a !important}
 .contato-quadro .mapa-quadro{width:100%;height:220px;margin:0 0 12px;border-radius:16px;box-shadow:none}
 /* mapa maior que o quadro, sobrando igual em cima e embaixo: o quadrinho do Google fica escondido e o pino fica no meio */
 .contato-quadro .mapa{top:-170px;height:calc(100% + 340px)}
