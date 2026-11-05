@@ -740,8 +740,12 @@ body{padding-top:0}
 .vip-faixa .grupo-vip h2{white-space:nowrap}
 @media (max-width:959px){ .vip-faixa .grupo-vip h2{font-size:26px} }
 /* rosa em cima do quadro azul = rosa embaixo (40px no computador, 26px no celular) */
-@media (min-width:960px){ .vip-faixa{margin-top:-36px;padding-top:44px;padding-bottom:40px;--rosa-comeca:76px} }
+@media (min-width:960px){ .vip-faixa{margin-top:-36px;padding-top:44px;padding-bottom:56px;--rosa-comeca:76px} }
 .vip-faixa::before{content:"";position:absolute;z-index:0;top:var(--rosa-comeca);bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#f6e4e1}
+/* onda branca só na parte de baixo do rosa, emendando com o branco de "Nossos produtos" */
+.vip-faixa::after{content:"";position:absolute;z-index:0;bottom:-1px;left:50%;width:100vw;height:26px;transform:translateX(-50%);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 26' preserveAspectRatio='none'%3E%3Cpath d='M0 14 C40 0 80 0 120 14 S200 28 240 14 V26 H0Z' fill='%23fff'/%3E%3C/svg%3E") repeat-x left bottom/240px 26px}
+@media (min-width:960px){ .vip-faixa::after{height:32px;background-size:320px 32px} }
 .vip-faixa .grupo-vip{z-index:1}
 .vip-enfeites{display:none}
 /* rabiscos em zigue-zague bem clarinhos, nas laterais das caixinhas (fora delas, no branco) */
