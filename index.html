@@ -753,15 +753,16 @@ body{padding-top:0}
 .info-rabiscos{position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none}
 .rb{position:absolute;display:block;overflow:visible}
 .rb path{fill:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
-/* 3 rabiscos de cada lado, de tamanhos diferentes, no meio do branco entre a borda da tela e as caixinhas
-   (--meio = centro desse espaço branco; as caixinhas ocupam 964px no meio da tela) */
-.info-rabiscos{--meio:calc((100vw - 964px) / 4)}
-.rb1{left:calc(var(--meio) - 34px);top:4%;width:60px}.rb1 path{stroke:#fcd3dc}
-.rb3{left:calc(var(--meio) - 2px);top:40%;width:32px}.rb3 path{stroke:#cfeaf6}
-.rb5{left:calc(var(--meio) - 26px);bottom:6%;width:46px}.rb5 path{stroke:#f6e6a8}
-.rb2{right:calc(var(--meio) - 12px);top:6%;width:30px}.rb2 path{stroke:#cfeaf6}
-.rb4{right:calc(var(--meio) - 30px);top:38%;width:56px}.rb4 path{stroke:#f6e6a8}
-.rb6{right:calc(var(--meio) - 18px);bottom:4%;width:38px}.rb6 path{stroke:#fcd3dc}
+/* 3 rabiscos pequenos e delicados de cada lado, nos lugares marcados pela cliente
+   (--g = largura do branco entre a borda da tela e as caixinhas; as caixinhas ocupam 964px no meio) */
+.info-rabiscos{--g:calc((100vw - 964px) / 2)}
+.info-rabiscos .rb path{stroke-width:7}
+.rb1{left:calc(var(--g) * .35 - 17px);top:4%;width:34px}.rb1 path{stroke:#fcd3dc}
+.rb3{left:calc(var(--g) * .74 - 12px);top:44%;width:24px}.rb3 path{stroke:#cfeaf6}
+.rb5{left:calc(var(--g) * .36 - 15px);top:80%;width:30px}.rb5 path{stroke:#f6e6a8}
+.rb2{right:calc(var(--g) * .25 - 11px);top:18%;width:22px}.rb2 path{stroke:#cfeaf6}
+.rb4{right:calc(var(--g) * .76 - 16px);top:52%;width:32px}.rb4 path{stroke:#f6e6a8}
+.rb6{right:calc(var(--g) * .28 - 13px);top:84%;width:26px}.rb6 path{stroke:#fcd3dc}
 @media (max-width:1179px){ .info-rabiscos{display:none} }
 /* movimentos do grupo VIP: letras tremendo e a setinha clicando no botão (as crianças ficam paradas) */
 /* título igual ao vídeo: cada letra num ângulo e altura diferente, "tremendo" quadro a quadro */
