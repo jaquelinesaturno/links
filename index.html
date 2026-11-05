@@ -691,6 +691,26 @@ body{padding-top:0}
 
 /* ---------- grupo VIP do WhatsApp: faixa azul, foto à esquerda, título grande e botão branco ---------- */
 .grupo-vip{position:relative;display:grid;grid-template-columns:142px 1fr;grid-template-areas:"foto texto" "foto botao";align-items:center;gap:6px 12px;min-height:118px;margin-top:70px;padding:14px 16px 14px 0;border-radius:22px;background:linear-gradient(100deg,#6cc4f4,#1a8fd6 55%);color:#fff}
+/* fundo rosa de ponta a ponta atrás do grupo VIP, com enfeites infantis */
+.vip-faixa{position:relative;margin-top:40px;padding-top:6px;padding-bottom:46px}
+.vip-faixa .grupo-vip{z-index:1}
+.vip-enfeites{position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);overflow:hidden;pointer-events:none;
+  background:radial-gradient(circle,#fff 2px,transparent 2.5px) 0 0/46px 46px,radial-gradient(circle,rgba(240,69,122,.25) 2px,transparent 2.5px) 23px 23px/46px 46px,linear-gradient(180deg,#ffd9e6,#ffc6da)}
+.en{position:absolute;display:block}
+.en-nuvem1{left:3%;top:12%;width:110px}
+.en-nuvem2{right:3%;bottom:8%;width:130px}
+.en-balao1{right:2%;top:10%;width:38px}
+.en-balao2{left:1.5%;bottom:10%;width:32px}
+.en-estrela1{left:9%;top:58%;width:28px}
+.en-estrela2{right:11%;top:16%;width:22px}
+.en-estrela3{left:46%;top:6%;width:18px}
+.en-coracao1{right:9%;bottom:34%;width:26px}
+.en-coracao2{left:30%;bottom:6%;width:20px}
+.en-arco{right:22%;top:5%;width:80px;opacity:.9}
+.en-pirulito{left:13%;top:8%;width:22px}
+@media (max-width:959px){
+  .en-nuvem1{width:70px;top:6%}.en-nuvem2{width:80px;bottom:3%}.en-balao1{width:26px;top:6%}.en-balao2,.en-pirulito,.en-estrela1{display:none}.en-arco{width:54px;right:30%;top:3%}.en-coracao1{bottom:auto;top:12%;right:18%}
+}
 /* crianças sem fundo: saem por cima da faixa, cortadas só embaixo pelo canto arredondado */
 .grupo-foto{position:absolute;left:4px;bottom:0;width:auto;height:150px;pointer-events:none;clip-path:inset(-200px 0 0 0 round 0 0 0 22px)}
 .grupo-texto{grid-area:texto}
