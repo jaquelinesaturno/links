@@ -697,12 +697,8 @@ body{padding-top:0}
 .produto-foto .foto-modelo{background:linear-gradient(160deg,#fde3ec,#fbf6f1 60%,#dcf0fc);color:rgba(17,17,17,.3)}
 .produtos-lista li:last-child .produto-foto{aspect-ratio:8/3;background:#dff2e6}
 .produtos-lista li:last-child .produto-foto img{object-fit:contain}
-.produto-icone{display:grid;place-items:center;width:46px;height:46px;margin:-23px 0 8px;position:relative;border-radius:50%;background:#ffe1ea;box-shadow:0 0 0 4px #fffaf7;--traco:#f0457a}
-.produtos-lista li:nth-child(2) .produto-icone{background:#dcf0fc;--traco:#1a8fd6}
-.produtos-lista li:nth-child(3) .produto-icone{background:#fdf0c4;--traco:#c98a00}
-.produtos-lista li:nth-child(4) .produto-icone{background:#efe3fb;--traco:#9b5cd6}
-.produtos-lista li:nth-child(5) .produto-icone{background:#dff2e6;--traco:#3a9a64}
-.produto-icone svg{width:22px;height:22px;fill:none;stroke:var(--traco);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+/* sem os circulinhos de ícone: o nome vem logo abaixo da imagem */
+.produto-foto + b{margin-top:14px}
 .produtos-lista b{padding:0 10px;font-family:var(--titulo);font-size:15px;line-height:1.2;color:var(--tinta)}
 .produtos-lista small{margin-top:4px;padding:0 10px;font-size:11.5px;line-height:1.4;color:#666666}
 @media (min-width:960px){
@@ -953,27 +949,22 @@ body{padding-top:0}
     <ul class="produtos-lista">
       <li><a class="js-whats-msg" data-msg="Oi! Vim pelo Instagram e quero ver a moda feminina (1 a 16 anos)." href="#conversar" target="_blank" rel="noopener">
         <span class="produto-foto"><img src="fotos/produto-moda-feminina.svg" alt="Ilustração de vestido rosa" loading="lazy"></span>
-        <i class="produto-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 3.5h5l-.8 3.5 4.3 13H6l4.3-13z"/><path d="M9.7 7h4.6"/></svg></i>
         <b>Moda feminina</b><small>Infantil e juvenil, de 1 a 16 anos</small>
       </a></li>
       <li><a class="js-whats-msg" data-msg="Oi! Vim pelo Instagram e quero ver a moda masculina (1 a 16 anos)." href="#conversar" target="_blank" rel="noopener">
         <span class="produto-foto"><img src="fotos/produto-moda-masculina.svg" alt="Ilustração de camiseta azul" loading="lazy"></span>
-        <i class="produto-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 4 4 6.6l2 3.6 2-1V20h8V9.2l2 1 2-3.6L15.5 4c-.7 1.3-2 2-3.5 2s-2.8-.7-3.5-2z"/></svg></i>
         <b>Moda masculina</b><small>Infantil e juvenil, de 1 a 16 anos</small>
       </a></li>
       <li><a class="js-whats-msg" data-msg="Oi! Vim pelo Instagram e quero ver os calçados." href="#conversar" target="_blank" rel="noopener">
         <span class="produto-foto"><img src="fotos/produto-calcados.svg" alt="Ilustração de um par de tênis" loading="lazy"></span>
-        <i class="produto-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.5V10l4-.5 2.5-3.5 2.2 1.2-.9 2.8 5 2.2c3 .6 5.2 1.6 5.2 3.3v2z"/><path d="M3 17.5h18M12.5 11.5l-1 1.5M15 12.5l-1 1.5"/></svg></i>
         <b>Calçados</b><small>Do número 17 ao 33</small>
       </a></li>
       <li><a class="js-whats-msg" data-msg="Oi! Vim pelo Instagram e quero ver os acessórios femininos." href="#conversar" target="_blank" rel="noopener">
         <span class="produto-foto"><img src="fotos/produto-acessorios-femininos.svg" alt="Ilustração de laço e presilhas" loading="lazy"></span>
-        <i class="produto-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 12 4 7.5v9zM13.5 12 20 7.5v9z"/><circle cx="12" cy="12" r="1.8"/></svg></i>
         <b>Acessórios femininos</b><small>Para as meninas</small>
       </a></li>
       <li><a class="js-whats-msg" data-msg="Oi! Vim pelo Instagram e quero ver os acessórios masculinos." href="#conversar" target="_blank" rel="noopener">
         <span class="produto-foto"><img src="fotos/produto-acessorios-masculinos.svg" alt="Ilustração de boné e óculos escuros" loading="lazy"></span>
-        <i class="produto-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 15.5c0-4.7 3.6-8.5 8-8.5s8 3.8 8 8.5z"/><path d="M4 15.5h17.5c0 1.2-1.5 2-4 2H4zM12 7V5.5"/></svg></i>
         <b>Acessórios masculinos</b><small>Para os meninos</small>
       </a></li>
     </ul>
