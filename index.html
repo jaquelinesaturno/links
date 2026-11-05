@@ -896,7 +896,17 @@ body{padding-top:0}
 .rb2{right:calc(var(--g) * .25 - 11px);top:18%;width:22px}.rb2 path{stroke:#cfeaf6}
 .rb4{right:calc(var(--g) * .76 - 16px);top:52%;width:32px}.rb4 path{stroke:#f6e6a8}
 .rb6{right:calc(var(--g) * .28 - 13px);top:84%;width:26px}.rb6 path{stroke:#fcd3dc}
-@media (max-width:1179px){ .info-rabiscos{display:none} }
+@media (min-width:960px) and (max-width:1179px){ .info-rabiscos{display:none} }
+/* celular: rabiscos pequenininhos no branco dos lados da caixinha, longe das setas */
+@media (max-width:959px){
+  .info-rabiscos .rb path{stroke-width:8}
+  .rb1{left:3px;top:4%;width:22px}
+  .rb5{left:6px;top:auto;bottom:6%;width:20px}
+  .rb3{left:2px;top:72%;width:14px}
+  .rb2{right:5px;top:8%;width:14px}
+  .rb4{right:3px;top:26%;width:20px}
+  .rb6{right:6px;top:auto;bottom:5%;width:16px}
+}
 /* movimentos do grupo VIP: letras tremendo e a setinha clicando no botão (as crianças ficam paradas) */
 /* título igual ao vídeo: cada letra num ângulo e altura diferente, "tremendo" quadro a quadro */
 .grupo-vip h2 .vl{display:inline-block;animation:vl-treme .5s steps(1,end) infinite}
