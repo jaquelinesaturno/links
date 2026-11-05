@@ -531,6 +531,26 @@ h1{font-weight:600;font-size:clamp(38px,11vw,70px);line-height:1;letter-spacing:
    radial-gradient(circle at 34% 97%,#bfe8cf 3px,transparent 3.5px),
    radial-gradient(circle at 57% 96%,#f8e08e 4px,transparent 4.5px),
    radial-gradient(circle at 74% 98%,#a8dcf7 3px,transparent 3.5px)}
+/* celular: as caixas ocupam quase tudo, então as bolinhas ficam na faixa branca das laterais */
+@media (max-width:959px){
+  .contato-final::after{background:
+   radial-gradient(circle at 2.2% 14%,#ffb3c8 3px,transparent 3.5px),
+   radial-gradient(circle at 2% 27%,#a8dcf7 2.5px,transparent 3px),
+   radial-gradient(circle at 2.4% 41%,#f8e08e 3px,transparent 3.5px),
+   radial-gradient(circle at 1.9% 55%,#d8c2f2 2.5px,transparent 3px),
+   radial-gradient(circle at 2.3% 68%,#bfe8cf 3px,transparent 3.5px),
+   radial-gradient(circle at 2% 82%,#ffb3c8 2.5px,transparent 3px),
+   radial-gradient(circle at 2.3% 94%,#a8dcf7 3px,transparent 3.5px),
+   radial-gradient(circle at 97.8% 9%,#d8c2f2 3px,transparent 3.5px),
+   radial-gradient(circle at 98% 21%,#f8e08e 2.5px,transparent 3px),
+   radial-gradient(circle at 97.6% 35%,#ffb3c8 3px,transparent 3.5px),
+   radial-gradient(circle at 98.1% 48%,#a8dcf7 2.5px,transparent 3px),
+   radial-gradient(circle at 97.7% 62%,#bfe8cf 3px,transparent 3.5px),
+   radial-gradient(circle at 98% 75%,#f8e08e 2.5px,transparent 3px),
+   radial-gradient(circle at 97.8% 89%,#d8c2f2 3px,transparent 3.5px),
+   radial-gradient(circle at 30% 2%,#a8dcf7 3px,transparent 3.5px),
+   radial-gradient(circle at 70% 3%,#ffb3c8 3px,transparent 3.5px)}
+}
 .contato-topo{display:flex;align-items:flex-end;justify-content:center;gap:10px;margin-bottom:6px}
 /* "Fale com a gente": só o texto em azul, sem a caixinha rosa */
 .contato-pilula{display:inline-block;margin-bottom:28px;padding:7px 6px;background:none;color:#1a8fd6;font:800 24px/1.2 var(--titulo)}
