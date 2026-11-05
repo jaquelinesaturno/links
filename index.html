@@ -748,11 +748,15 @@ body{padding-top:0}
 .info-rabiscos{position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none}
 .rb{position:absolute;display:block;overflow:visible}
 .rb path{fill:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
-/* espalhados no branco ao lado das caixinhas (as caixinhas começam em ~13% da tela) */
-.rb1{left:2.5%;top:10%;width:54px}.rb1 path{stroke:#fcd3dc}
-.rb3{left:7%;bottom:12%;width:48px}.rb3 path{stroke:#f6e6a8}
-.rb2{right:3%;top:34%;width:30px}.rb2 path{stroke:#cfeaf6}
-.rb4{right:8.5%;top:8%;width:36px}.rb4 path{stroke:#fcd3dc}
+/* 3 rabiscos de cada lado, de tamanhos diferentes, no meio do branco entre a borda da tela e as caixinhas
+   (--meio = centro desse espaço branco; as caixinhas ocupam 964px no meio da tela) */
+.info-rabiscos{--meio:calc((100vw - 964px) / 4)}
+.rb1{left:calc(var(--meio) - 34px);top:4%;width:60px}.rb1 path{stroke:#fcd3dc}
+.rb3{left:calc(var(--meio) - 2px);top:40%;width:32px}.rb3 path{stroke:#cfeaf6}
+.rb5{left:calc(var(--meio) - 26px);bottom:6%;width:46px}.rb5 path{stroke:#f6e6a8}
+.rb2{right:calc(var(--meio) - 12px);top:6%;width:30px}.rb2 path{stroke:#cfeaf6}
+.rb4{right:calc(var(--meio) - 30px);top:38%;width:56px}.rb4 path{stroke:#f6e6a8}
+.rb6{right:calc(var(--meio) - 18px);bottom:4%;width:38px}.rb6 path{stroke:#fcd3dc}
 @media (max-width:1179px){ .info-rabiscos{display:none} }
 /* movimentos do grupo VIP: letras tremendo e a setinha clicando no botão (as crianças ficam paradas) */
 /* título igual ao vídeo: cada letra num ângulo e altura diferente, "tremendo" quadro a quadro */
@@ -888,6 +892,8 @@ body{padding-top:0}
       <svg class="rb rb2" viewBox="0 0 80 120"><path d="M10 30l20 70 6-84 22 64 4-68 14 40"/></svg>
       <svg class="rb rb3" viewBox="0 0 120 90"><path d="M4 10q60 4 90 16L8 40l100 22-70 10 60 14"/></svg>
       <svg class="rb rb4" viewBox="0 0 90 120"><path d="M10 110L4 40l26 50 4-74 22 50 6-56"/></svg>
+      <svg class="rb rb5" viewBox="0 0 110 70"><path d="M6 12l84 2-70 22 80 4-66 22"/></svg>
+      <svg class="rb rb6" viewBox="0 0 70 110"><path d="M14 100L8 24l18 52 6-66 16 54 10-50"/></svg>
     </div>
     <ul class="info-lista">
       <li class="info-caixa">
