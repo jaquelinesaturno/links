@@ -716,6 +716,23 @@ body{padding-top:0}
 
 /* ---------- grupo VIP do WhatsApp: faixa azul, foto à esquerda, título grande e botão branco ---------- */
 .grupo-vip{position:relative;display:grid;grid-template-columns:142px 1fr;grid-template-areas:"foto texto" "foto botao";align-items:center;gap:6px 12px;min-height:118px;margin-top:52px;padding:14px 16px 14px 0;border-radius:22px;background:linear-gradient(100deg,#6cc4f4,#1a8fd6 55%);color:#fff}
+/* caixinhas "como comprar" logo abaixo da capa */
+.info-caixas{padding-top:14px;padding-bottom:10px}
+.info-lista{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.info-caixa{display:flex;flex-direction:column;align-items:center;padding:22px 18px 20px;border-radius:22px;background:#fdf1e6;text-align:center}
+.info-rotulo{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7a6a5e}
+.info-icone{width:54px;height:54px;margin:14px 0 10px}
+.info-caixa h3{margin:0;font-size:21px;line-height:1.15;color:var(--tinta)}
+.info-caixa p{margin:8px 0 0;max-width:260px;font-size:13px;line-height:1.5;color:#5d5550}
+.info-link{margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f0457a;text-decoration:none}
+.info-link:hover{text-decoration:underline}
+@media (min-width:960px){
+  .info-caixas{max-width:1060px;padding-top:26px;padding-bottom:6px}
+  .info-lista{grid-template-columns:repeat(3,1fr);gap:22px}
+  .info-caixa{padding:28px 24px 26px}
+  .info-icone{width:64px;height:64px;margin:18px 0 14px}
+  .info-caixa h3{font-size:24px}
+}
 /* fundo rosa de ponta a ponta atrás do grupo VIP, com enfeites infantis */
 .vip-faixa{position:relative;margin-top:0;padding-top:6px;padding-bottom:70px}
 @media (min-width:960px){ .vip-faixa{padding-bottom:96px} }
