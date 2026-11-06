@@ -1031,7 +1031,11 @@ body{padding-top:0}
 .promo-ofertas li:nth-child(2) b{color:#1a8fd6}
 .promo-ofertas small{display:block;margin-top:2px;font-size:11px;line-height:1.3;color:#5d5550}
 .promo-btn{position:relative;flex:0 0 auto;display:inline-flex;align-items:center;margin-right:30px;padding:7px 16px;border-radius:999px;background:#ffb02e;color:#fff;font:800 13px/1 var(--titulo);text-transform:uppercase;letter-spacing:.04em;text-decoration:none;text-shadow:0 1px 0 rgba(150,80,0,.35);box-shadow:0 6px 14px -6px rgba(0,0,0,.35)}
-.promo-clique{position:absolute;right:-27px;top:-9px;width:30px;height:30px}
+/* setinha clicando em cima do botão, igual à do Grupo VIP */
+.promo-clique{position:absolute;right:-20px;top:-14px;width:32px;height:32px;overflow:visible;pointer-events:none}
+.promo-c-seta{transform-origin:13px 11px;animation:vip-seta 1.8s ease-in-out infinite}
+.promo-c-raios{transform-origin:13px 11px;opacity:0;animation:vip-raios 1.8s ease-out infinite}
+@media (prefers-reduced-motion:reduce){.promo-estrela,.promo-raios,.promo-c-seta,.promo-c-raios{animation:none}.promo-c-raios{opacity:1}}
 @media (min-width:960px){
   .vip-linha{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:stretch;max-width:none;margin:72px -40px 0}
   .vip-linha .grupo-vip{max-width:none;margin:0;grid-template-columns:270px 1fr;grid-template-areas:"foto texto" "foto botao";gap:10px 18px;padding:22px 24px 22px 0}
