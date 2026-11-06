@@ -1010,9 +1010,10 @@ body{padding-top:0}
 /* "Eu quero" logo abaixo da linha de baixo, do lado esquerdo */
 .promo-btn-lugar{position:absolute;left:50%;top:calc(100% + 16px);display:flex;transform:translateX(-50%)}
 /* estrelas piscando/brilhando e risquinhos acendendo, como no vídeo */
-.promo-estrela{position:absolute;z-index:1;fill:#ffb02e;filter:drop-shadow(0 0 6px rgba(255,190,60,.95));animation:promo-brilha 1.6s ease-in-out infinite}
-.promo-estrela.e1{width:34px;height:34px;left:-15px;top:52%;rotate:-10deg}
-.promo-estrela.e2{width:22px;height:22px;right:-10px;top:16%;rotate:12deg;animation-delay:-.8s}
+/* estrelas no mesmo lugar do vídeo: a grande na curva de baixo, à esquerda; a pequena na curva de cima, à direita */
+.promo-estrela{position:absolute;z-index:1;fill:#ffb02e;filter:drop-shadow(0 0 6px rgba(255,190,60,.95));animation:promo-brilha 1.4s ease-in-out infinite}
+.promo-estrela.e1{width:36px;height:36px;left:calc(var(--arco) * .32 - 18px);top:calc(78% - 18px);rotate:-12deg}
+.promo-estrela.e2{width:22px;height:22px;right:calc(var(--arco) * .32 - 11px);top:calc(14% - 11px);rotate:14deg;animation-delay:-.7s}
 @keyframes promo-brilha{0%,100%{scale:1;filter:drop-shadow(0 0 4px rgba(255,190,60,.7))}50%{scale:1.25;filter:drop-shadow(0 0 12px rgba(255,210,90,1))}}
 @keyframes promo-raio{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
 .promo-topo{position:relative;flex:0 0 auto;margin:0 10px 0 2px}
