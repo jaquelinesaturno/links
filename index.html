@@ -1613,6 +1613,7 @@ function aplicaIdioma(lang) {
   document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
   textos.forEach(t => t.n.nodeValue = lang === "en" ? t.orig.replace(t.pt, EN[t.pt]) : t.orig);
   letrasVip(lang === "en" ? EN["Grupo VIP"] : "Grupo VIP");
+  letras(promoTitulo, lang === "en" ? EN["Promoção"] : "Promoção");
   document.querySelectorAll(".idioma button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));  const msg = lang === "en" ? WHATSAPP_MSG_EN : WHATSAPP_MSG;
   document.querySelectorAll(".js-whats").forEach(a => a.href = whats(msg));
   try { localStorage.setItem("idioma", lang); } catch (e) {}
