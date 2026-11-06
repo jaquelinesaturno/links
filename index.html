@@ -986,6 +986,27 @@ body{padding-top:0}
   .grupo-btn{padding:9px 16px;font-size:17px}
   .grupo-btn svg{width:22px;height:22px}
 }
+/* grupo VIP menor + quadro de promoção do lado */
+.vip-linha{position:relative;z-index:1}
+.promo{position:relative;margin-top:16px;padding:20px 20px 18px;border-radius:22px;background:#fff;border:3px solid #6cc4f4;text-align:center;box-shadow:0 18px 34px -26px rgba(0,0,0,.35)}
+.promo-rotulo{display:inline-block;padding:4px 14px;border-radius:999px;background:#f0457a;color:#fff;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.promo h3{margin:10px 0 12px;font-size:28px;line-height:1.05;color:#1a8fd6}
+.promo-ofertas{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0;padding:0;list-style:none}
+.promo-ofertas li{padding:10px 8px;border-radius:16px;background:#fce4f1}
+.promo-ofertas li:nth-child(2){background:#dcf0fc}
+.promo-ofertas b{display:block;font:800 30px/1 var(--titulo);color:#f0457a}
+.promo-ofertas li:nth-child(2) b{color:#1a8fd6}
+.promo-ofertas small{display:block;margin-top:4px;font-size:11.5px;line-height:1.35;color:#5d5550}
+.promo-btn{display:inline-flex;margin-top:14px;padding:9px 18px;border-radius:999px;background:#f0457a;color:#fff;font:800 14px/1 var(--titulo);text-transform:uppercase;letter-spacing:.04em;text-decoration:none}
+@media (min-width:960px){
+  .vip-linha{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:24px;align-items:stretch;max-width:1060px;margin:72px auto 0}
+  .vip-linha .grupo-vip{max-width:none;margin:0;grid-template-columns:250px 1fr;grid-template-areas:"foto texto" "foto botao";gap:10px 18px;padding:22px 24px 22px 0}
+  .vip-linha .grupo-foto{left:10px;height:270px}
+  .vip-linha .grupo-vip h2{font-size:44px}
+  .vip-linha .grupo-btn{justify-self:center}
+  .promo{margin-top:0;display:flex;flex-direction:column;justify-content:center}
+  .promo h3{font-size:34px}
+}
 
 /* entrada suave */
 .revela{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
