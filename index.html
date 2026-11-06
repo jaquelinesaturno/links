@@ -1591,12 +1591,15 @@ faixaTrilho.querySelectorAll(".faixa-item").forEach((el, i) => { if (i >= 3) el.
 
 // Grupo VIP: cada letra do título vira um pedacinho que pula (o leitor de tela lê o título inteiro)
 const vipTitulo = document.querySelector(".grupo-vip h2");
-function letrasVip(txt) {
-  if (!vipTitulo) return;
-  vipTitulo.setAttribute("aria-label", txt);
-  vipTitulo.innerHTML = [...txt].map((c, i) => c === " " ? '<span class="vl-esp" aria-hidden="true"> </span>' : `<span class="vl" style="--i:${i}" aria-hidden="true">${c}</span>`).join("");
+const promoTitulo = document.querySelector(".promo-rotulo");
+function letras(el, txt) {
+  if (!el) return;
+  el.setAttribute("aria-label", txt);
+  el.innerHTML = [...txt].map((c, i) => c === " " ? '<span class="vl-esp" aria-hidden="true"> </span>' : `<span class="vl" style="--i:${i}" aria-hidden="true">${c}</span>`).join("");
 }
+function letrasVip(txt) { letras(vipTitulo, txt); }
 letrasVip("Grupo VIP");
+letras(promoTitulo, "Promoção");
 
 const textos = [];
 [document.querySelector(".faixa-avisos"), document.querySelector(".topo"), document.querySelector("main"), document.querySelector(".contato-final"),document.querySelector(".assinatura"), document.querySelector(".nav")].forEach(raiz => {
