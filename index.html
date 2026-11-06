@@ -1694,6 +1694,52 @@ function aplicaIdioma(lang) {
 document.querySelectorAll(".idioma button").forEach(b => b.addEventListener("click", () => aplicaIdioma(b.dataset.lang)));
 try { if (localStorage.getItem("idioma") === "en") aplicaIdioma("en"); } catch (e) {}
 
+// PROMOÇÃO EDITÁVEL: a cliente muda nome, descontos e textos na planilha do Google (coluna "valor").
+// Se a planilha não carregar, fica o que está escrito no HTML.
+const PLANILHA_PROMO = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRMZSuTtiwYpXU6vU4033QMHyn8nHAPAzh7DUNO1bzUjFbOPBfW31ZDLab32SiVuuRJI6dpALU-coYk/pub?gid=712465404&single=true&output=csv";
+function lePlanilha(csv) {
+  const dados = {};
+  csv.replace(/^﻿/, "").split(/\r?\n/).forEach(linha => {
+    const m = linha.match(/^\s*"?([^",]*)"?\s*,(.*)$/);
+    if (!m) return;
+    let v = m[2].trim();
+    if (v.startsWith('"') && v.endsWith('"')) v = v.slice(1, -1).replace(/""/g, '"');
+    const k = m[1].trim().toLowerCase();
+    if (k && v) dados[k] = v.trim();
+  });
+  return dados;
+}
+function aplicaPromo(d) {
+  const promo = document.querySelector(".promo");
+  if (!promo) return;
+  if (d.nome) {
+    const palavras = d.nome.split(/\s+/);
+    const h3 = promo.querySelector("h3");
+    const a = document.createElement("span"), b = document.createElement("span");
+    a.className = "pl1"; b.className = "pl2";
+    a.textContent = palavras[0];
+    b.textContent = palavras.slice(1).join(" ");
+    h3.replaceChildren(a, ...(b.textContent ? [" ", b] : []));
+    const btn = promo.querySelector(".promo-btn");
+    btn.dataset.msg = "Oi! Quero aproveitar a " + d.nome + " da Pequenos Aprendizes.";
+    btn.href = whats(btn.dataset.msg);
+  }
+  const itens = promo.querySelectorAll(".promo-ofertas li");
+  [1, 2].forEach(i => {
+    const li = itens[i - 1];
+    if (!li) return;
+    if (d["desconto" + i]) li.querySelector("b").textContent = d["desconto" + i];
+    if (d["texto" + i]) li.querySelector("small").textContent = d["texto" + i];
+  });
+  const esconde = d.mostrar && /^(n|não|nao)/i.test(d.mostrar);
+  promo.hidden = !!esconde;
+  document.querySelector(".vip-linha")?.classList.toggle("sem-promo", !!esconde);
+}
+fetch(PLANILHA_PROMO, { cache: "no-store" })
+  .then(r => r.ok ? r.text() : Promise.reject())
+  .then(csv => aplicaPromo(lePlanilha(csv)))
+  .catch(() => {});
+
 // Barra de pesquisa da capa: procura nas caixinhas de links e mostra só as que combinam
 const formPesquisa = document.getElementById("pesquisa"), campoPesquisa = document.getElementById("pesquisa-texto");
 const caixasLinks = [...document.querySelectorAll("#links .caixas > li")];
