@@ -995,9 +995,17 @@ body{padding-top:0}
 .promo-rotulo .vl:nth-child(4n+2){--r1:5deg;--y1:-3px;--r2:8deg;--y2:0px}
 .promo-rotulo .vl:nth-child(4n+3){--r1:-4deg;--y1:-1px;--r2:-8deg;--y2:2px}
 .promo-rotulo .vl:nth-child(4n){--r1:6deg;--y1:1px;--r2:2deg;--y2:-3px}
-@media (min-width:960px){ .promo-rotulo{font-size:40px;-webkit-text-stroke:3px #fff} }
-.promo-rodape{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
-.promo h3{margin:0 0 12px;font-size:28px;line-height:1.05;color:#fff;text-shadow:0 3px 0 rgba(0,0,0,.12)}
+@media (min-width:960px){ .promo-rotulo{font-size:26px} }
+/* selo no estilo "esquenta": contorno laranja arredondado com estrelinhas, título em duas cores inclinado e botão amarelo */
+.promo-selo{position:relative;display:flex;flex-direction:column;align-items:center;margin:4px 2px 16px;padding:16px 26px 18px;border:2.5px solid #ffb02e;border-radius:999px}
+.promo-estrela{position:absolute;width:26px;height:26px;fill:#ffb02e;stroke:#fff;stroke-width:1.5;stroke-linejoin:round}
+.promo-estrela.e1{left:12%;top:-14px;transform:rotate(-12deg)}
+.promo-estrela.e2{right:12%;bottom:-14px;transform:rotate(14deg)}
+.promo-topo{display:inline-flex;align-items:flex-end;gap:2px;transform:rotate(-5deg);margin-right:20px}
+.promo-raios{width:22px;height:18px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;margin-bottom:12px}
+.promo h3{margin:4px 0 14px;font-size:38px;line-height:.95;transform:rotate(-5deg);-webkit-text-stroke:5px #fff;paint-order:stroke fill;text-shadow:0 4px 0 rgba(0,0,0,.14)}
+.promo h3 .pl1{color:#ffb02e}
+.promo h3 .pl2{color:#1a8fd6}
 .promo-ofertas{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0;padding:0;list-style:none}
 .promo-ofertas li{padding:10px 8px;border-radius:16px;background:#fff}
 .promo-ofertas li:nth-child(2){background:#fff}
