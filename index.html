@@ -895,15 +895,15 @@ body{padding-top:0}
 .info-link{margin-top:14px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1a8fd6;text-decoration:none}
 .info-link:hover{text-decoration:underline}
 @media (min-width:960px){
-  .info-caixas{max-width:1060px;padding-top:26px;padding-bottom:6px}
-  /* 5 caixinhas: 3 em cima e 2 centralizadas embaixo */
-  .info-lista{grid-template-columns:repeat(6,1fr);gap:22px}
-  .info-lista .info-caixa{grid-column:span 2}
-  .info-lista .info-caixa:nth-child(4){grid-column:2 / 4}
-  .info-lista .info-caixa:nth-child(5){grid-column:4 / 6}
-  .info-caixa{padding:28px 24px 26px}
-  .info-icone{width:64px;height:64px;margin:18px 0 14px}
-  .info-caixa h3{font-size:24px}
+  /* 5 caixinhas lado a lado, menores */
+  .info-caixas{max-width:1200px;padding-top:26px;padding-bottom:6px}
+  .info-lista{grid-template-columns:repeat(5,1fr);gap:14px}
+  .info-caixa{padding:20px 12px 18px}
+  .info-rotulo{font-size:9.5px;letter-spacing:.12em}
+  .info-icone{width:46px;height:46px;margin:12px 0 10px}
+  .info-caixa h3{font-size:18px}
+  .info-caixa p{font-size:12px;line-height:1.45}
+  .info-link{font-size:10px;letter-spacing:.08em}
 }
 /* grupo VIP: faixa rosa clarinha de ponta a ponta, começando um pouco acima do quadro azul;
    a seção sobe só o bastante para a pontinha da mão da menina encostar na caixinha "Opções de pagamento" */
