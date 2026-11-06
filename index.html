@@ -1032,6 +1032,10 @@ body{padding-top:0}
 .promo-rotulo,.promo h3{filter:drop-shadow(1px 0 0 #1c6fb8) drop-shadow(-1px 0 0 #1c6fb8) drop-shadow(0 1px 0 #1c6fb8) drop-shadow(0 -1px 0 #1c6fb8) drop-shadow(0 3px 0 rgba(0,0,0,.18))}
 .promo h3{margin:0;font-size:28px;line-height:1;white-space:nowrap;-webkit-text-stroke:7px #fff;paint-order:stroke fill}
 /* efeito do vídeo: as duas palavras trocam de cor (laranja e azul) */
+/* nome vindo da planilha: se for comprido, quebra em duas linhas em vez de sair do quadro */
+.promo h3{white-space:normal;text-wrap:balance;text-align:center;max-width:100%}
+.promo[hidden]{display:none !important}
+@media (min-width:960px){ .vip-linha.sem-promo{grid-template-columns:minmax(0,1fr);max-width:980px;margin-left:auto;margin-right:auto} }
 .promo h3 .pl1{color:#3aa6f2;animation:promo-cor-a 1.6s steps(1,end) infinite}
 .promo h3 .pl2{color:#ffa21a;animation:promo-cor-b 1.6s steps(1,end) infinite}
 @keyframes promo-cor-a{0%{color:#3aa6f2}50%{color:#ffa21a}}
