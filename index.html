@@ -939,6 +939,15 @@ body{padding-top:0}
 .rb4{right:calc(var(--g) * .76 - 16px);top:52%;width:32px}.rb4 path{stroke:#f6e6a8}
 .rb6{right:calc(var(--g) * .28 - 13px);top:84%;width:26px}.rb6 path{stroke:#fcd3dc}
 @media (min-width:960px) and (max-width:1279px){ .info-rabiscos{display:none} }
+/* 3 rabiscos no branco logo abaixo das caixinhas (computador): embaixo da 1ª, da 3ª e à direita da 5ª */
+.info-rabiscos-baixo{display:none}
+@media (min-width:960px){
+  .info-rabiscos-baixo{display:block;position:absolute;z-index:2;left:50%;top:100%;width:0;height:0;pointer-events:none}
+  .info-rabiscos-baixo .rb path{stroke-width:7}
+  .rb7{left:-470px;top:22px;width:34px;rotate:-6deg}.rb7 path{stroke:#fcd3dc}
+  .rb8{left:6px;top:30px;width:26px;rotate:8deg}.rb8 path{stroke:#cfeaf6}
+  .rb9{left:430px;top:24px;width:32px;rotate:-4deg}.rb9 path{stroke:#f6e6a8}
+}
 /* celular: rabiscos pequenininhos no branco dos lados da caixinha, longe das setas */
 @media (max-width:959px){
   .info-rabiscos .rb path{stroke-width:8}
