@@ -998,24 +998,36 @@ body{padding-top:0}
 @media (min-width:960px){ .promo-rotulo{font-size:20px} }
 /* selo igual ao "Esquenta Black Friday": contorno laranja arredondado com estrela, "Promoção" pequeno em cima com risquinhos,
    título grande em duas cores com contorno branco + borda azul escura, e o botão amarelo em cima da linha de baixo com o clique */
-.promo-selo{position:relative;display:flex;justify-content:center;margin:2px 6px 24px;padding:10px 26px 20px;border:2.5px solid #ffb02e;border-radius:999px}
-.promo-texto{display:flex;flex-direction:column;align-items:flex-start}
-.promo-estrela{position:absolute;width:26px;height:26px;fill:#ffb02e;stroke:#fff;stroke-width:1.5;stroke-linejoin:round;filter:drop-shadow(0 0 4px rgba(255,190,60,.9))}
-.promo-estrela.e1{right:16%;top:-14px;transform:rotate(12deg)}
-.promo-topo{display:inline-flex;align-items:flex-end;gap:2px;margin-left:4px}
-.promo-raios{width:20px;height:20px;fill:none;stroke:#3aa6f2;stroke-width:2.8;stroke-linecap:round;margin-bottom:6px}
+.promo-selo{--arco:46px;--linha:2.5px;position:relative;display:flex;justify-content:center;margin:16px 4px 22px;padding:22px 30px 24px}
+/* contorno feito em pedaços: as pontas redondas + a linha de cima (cortada pelo "Promoção") + a de baixo (cortada pelo botão) */
+.promo-arco{position:absolute;top:0;bottom:0;width:var(--arco);border:var(--linha) solid #ffb02e;pointer-events:none}
+.promo-arco.esq{left:0;border-right:0;border-radius:999px 0 0 999px}
+.promo-arco.dir{right:0;border-left:0;border-radius:0 999px 999px 0}
+.promo-fio{position:absolute;left:var(--arco);right:var(--arco);display:flex;align-items:center;height:0}
+.promo-fio.cima{top:calc(var(--linha) / 2)}
+.promo-fio.baixo{bottom:calc(var(--linha) / 2)}
+.promo-fio i{flex:1;height:var(--linha);background:#ffb02e}
+.promo-fio i.curto{flex:0 0 22px}
+.promo-estrela{position:absolute;z-index:1;fill:#ffb02e;filter:drop-shadow(0 0 6px rgba(255,190,60,.95))}
+.promo-estrela.e1{width:34px;height:34px;left:-15px;top:52%;transform:rotate(-10deg)}
+.promo-estrela.e2{width:22px;height:22px;right:-10px;top:16%;transform:rotate(12deg)}
+.promo-topo{position:relative;flex:0 0 auto;margin:0 10px 0 2px}
+.promo-raios{position:absolute;left:-14px;top:-17px;width:20px;height:20px;fill:none;stroke:#3aa6f2;stroke-width:2.8;stroke-linecap:round}
 .promo-rotulo,.promo h3{filter:drop-shadow(1px 0 0 #1c6fb8) drop-shadow(-1px 0 0 #1c6fb8) drop-shadow(0 1px 0 #1c6fb8) drop-shadow(0 -1px 0 #1c6fb8) drop-shadow(0 3px 0 rgba(0,0,0,.18))}
-.promo h3{margin:0;font-size:36px;line-height:1;white-space:nowrap;-webkit-text-stroke:7px #fff;paint-order:stroke fill}
-.promo h3 .pl1{color:#ffa21a}
-.promo h3 .pl2{color:#3aa6f2}
+.promo h3{margin:0;font-size:30px;line-height:1;white-space:nowrap;-webkit-text-stroke:7px #fff;paint-order:stroke fill}
+/* efeito do vídeo: as duas palavras trocam de cor (laranja e azul) */
+.promo h3 .pl1{color:#3aa6f2;animation:promo-cor-a 1.6s steps(1,end) infinite}
+.promo h3 .pl2{color:#ffa21a;animation:promo-cor-b 1.6s steps(1,end) infinite}
+@keyframes promo-cor-a{0%{color:#3aa6f2}50%{color:#ffa21a}}
+@keyframes promo-cor-b{0%{color:#ffa21a}50%{color:#3aa6f2}}
 .promo-ofertas{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0;padding:0;list-style:none}
-.promo-ofertas li{padding:8px 8px;border-radius:16px;background:#fff}
+.promo-ofertas li{padding:6px 8px;border-radius:14px;background:#fff}
 .promo-ofertas li:nth-child(2){background:#fff}
-.promo-ofertas b{display:block;font:800 26px/1 var(--titulo);color:#f0457a}
+.promo-ofertas b{display:block;font:800 22px/1 var(--titulo);color:#f0457a}
 .promo-ofertas li:nth-child(2) b{color:#1a8fd6}
-.promo-ofertas small{display:block;margin-top:3px;font-size:11.5px;line-height:1.3;color:#5d5550}
-.promo-btn{position:absolute;left:14%;bottom:-15px;display:inline-flex;align-items:center;padding:7px 18px;border-radius:999px;background:#ffb02e;color:#fff;box-shadow:0 0 0 2px #fff,0 6px 14px -6px rgba(0,0,0,.35);font:800 13px/1 var(--titulo);text-transform:uppercase;letter-spacing:.04em;text-decoration:none;text-shadow:0 1px 0 rgba(150,80,0,.35)}
-.promo-clique{position:absolute;right:-24px;top:-10px;width:30px;height:30px}
+.promo-ofertas small{display:block;margin-top:2px;font-size:11px;line-height:1.3;color:#5d5550}
+.promo-btn{position:relative;flex:0 0 auto;display:inline-flex;align-items:center;margin-right:30px;padding:7px 16px;border-radius:999px;background:#ffb02e;color:#fff;font:800 13px/1 var(--titulo);text-transform:uppercase;letter-spacing:.04em;text-decoration:none;text-shadow:0 1px 0 rgba(150,80,0,.35);box-shadow:0 6px 14px -6px rgba(0,0,0,.35)}
+.promo-clique{position:absolute;right:-27px;top:-9px;width:30px;height:30px}
 @media (min-width:960px){
   .vip-linha{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:stretch;max-width:none;margin:72px -40px 0}
   .vip-linha .grupo-vip{max-width:none;margin:0;grid-template-columns:270px 1fr;grid-template-areas:"foto texto" "foto botao";gap:10px 18px;padding:22px 24px 22px 0}
