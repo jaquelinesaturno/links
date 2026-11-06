@@ -1678,7 +1678,8 @@ const textos = [];
   const w = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT);
   for (let n; (n = w.nextNode());) {
     const pt = n.nodeValue.trim();
-    if (EN[pt]) textos.push({ n, pt, orig: n.nodeValue });
+    // os textos que vêm da planilha da promoção não são traduzidos (a cliente escreve em português)
+    if (EN[pt] && !n.parentElement.closest("[data-planilha]")) textos.push({ n, pt, orig: n.nodeValue });
   }
 });
 function aplicaIdioma(lang) {
