@@ -1007,7 +1007,8 @@ body{padding-top:0}
 .promo-fio.cima{top:calc(var(--linha) / 2)}
 .promo-fio.baixo{bottom:calc(var(--linha) / 2)}
 .promo-fio i{flex:1;height:var(--linha);background:#ffb02e}
-.promo-fio i.curto{flex:0 0 22px}
+/* "Eu quero" logo abaixo da linha de baixo, do lado esquerdo */
+.promo-btn-lugar{position:absolute;left:calc(var(--arco) + 4px);top:calc(100% + 7px);display:flex}
 .promo-estrela{position:absolute;z-index:1;fill:#ffb02e;filter:drop-shadow(0 0 6px rgba(255,190,60,.95))}
 .promo-estrela.e1{width:34px;height:34px;left:-15px;top:52%;transform:rotate(-10deg)}
 .promo-estrela.e2{width:22px;height:22px;right:-10px;top:16%;transform:rotate(12deg)}
