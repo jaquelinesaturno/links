@@ -1020,13 +1020,13 @@ body{padding-top:0}
 .promo-btn-lugar{position:absolute;left:50%;top:calc(100% + 26px);display:flex;transform:translateX(-50%)}
 /* estrelas piscando/brilhando e risquinhos acendendo, como no vídeo */
 /* estrelas no mesmo lugar do vídeo: a grande na curva de baixo, à esquerda; a pequena na curva de cima, à direita */
-.promo-estrela{position:absolute;z-index:1;fill:#ffb02e;filter:drop-shadow(0 0 6px rgba(255,190,60,.95));animation:promo-brilha 1.4s ease-in-out infinite}
+.promo-estrela{position:absolute;z-index:1;fill:#ffb02e;filter:drop-shadow(0 0 6px rgba(255,190,60,.95));animation:promo-brilha 1.8s ease-in-out infinite}
 .promo-estrela.e1{width:36px;height:36px;left:calc(var(--arco) * .32 - 18px);top:calc(78% - 18px);rotate:-12deg}
-.promo-estrela.e2{width:22px;height:22px;right:calc(var(--arco) * .32 - 11px);top:calc(14% - 11px);rotate:14deg;animation-delay:-.7s}
-@keyframes promo-brilha{0%,100%{scale:1;filter:drop-shadow(0 0 4px rgba(255,190,60,.7))}50%{scale:1.25;filter:drop-shadow(0 0 12px rgba(255,210,90,1))}}
-@keyframes promo-brilha{0%,100%{scale:.85;transform:rotate(0deg);filter:drop-shadow(0 0 3px rgba(255,190,60,.6))}50%{scale:1.15;transform:rotate(18deg);filter:drop-shadow(0 0 12px rgba(255,214,100,1))}}
+.promo-estrela.e2{width:22px;height:22px;right:calc(var(--arco) * .32 - 11px);top:calc(14% - 11px);rotate:14deg}
+/* tudo no mesmo ritmo da setinha do "Eu quero" (1,8s): quando ela clica, as estrelas crescem bem e giram, e os tracinhos estouram */
+@keyframes promo-brilha{0%,22%,62%,100%{scale:1;transform:rotate(0deg);filter:drop-shadow(0 0 3px rgba(255,190,60,.6))}40%{scale:1.6;transform:rotate(28deg);filter:drop-shadow(0 0 14px rgba(255,214,100,1))}}
 /* tracinhos em leque em cima do começo da palavra, "estourando" como no vídeo */
-@keyframes promo-raio{0%{opacity:.15;transform:scale(.55)}35%{opacity:1;transform:scale(1.08)}60%,100%{opacity:1;transform:scale(1)}}
+@keyframes promo-raio{0%,28%{opacity:.25;transform:scale(.6)}42%{opacity:1;transform:scale(1.18)}62%,100%{opacity:1;transform:scale(1)}}
 .promo-topo{position:relative;flex:0 0 auto;margin:0 10px 0 2px}
 .promo-raios{position:absolute;left:-12px;bottom:calc(100% - 3px);width:30px;height:22px;fill:none;stroke:#3aa6f2;stroke-width:3;stroke-linecap:round;overflow:visible;transform-origin:67% 100%;animation:promo-raio 1.2s ease-out infinite;filter:drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 1px #fff)}
 .promo-rotulo,.promo h3{filter:drop-shadow(1px 0 0 #1c6fb8) drop-shadow(-1px 0 0 #1c6fb8) drop-shadow(0 1px 0 #1c6fb8) drop-shadow(0 -1px 0 #1c6fb8) drop-shadow(0 3px 0 rgba(0,0,0,.18))}
