@@ -1008,10 +1008,13 @@ body{padding-top:0}
 .promo-fio.baixo{bottom:calc(var(--linha) / 2)}
 .promo-fio i{flex:1;height:var(--linha);background:#ffb02e}
 /* "Eu quero" logo abaixo da linha de baixo, do lado esquerdo */
-.promo-btn-lugar{position:absolute;left:calc(var(--arco) + 4px);top:calc(100% + 7px);display:flex}
-.promo-estrela{position:absolute;z-index:1;fill:#ffb02e;filter:drop-shadow(0 0 6px rgba(255,190,60,.95))}
-.promo-estrela.e1{width:34px;height:34px;left:-15px;top:52%;transform:rotate(-10deg)}
-.promo-estrela.e2{width:22px;height:22px;right:-10px;top:16%;transform:rotate(12deg)}
+.promo-btn-lugar{position:absolute;left:50%;top:calc(100% + 7px);display:flex;transform:translateX(-50%)}
+/* estrelas piscando/brilhando e risquinhos acendendo, como no vídeo */
+.promo-estrela{position:absolute;z-index:1;fill:#ffb02e;filter:drop-shadow(0 0 6px rgba(255,190,60,.95));animation:promo-brilha 1.6s ease-in-out infinite}
+.promo-estrela.e1{width:34px;height:34px;left:-15px;top:52%;rotate:-10deg}
+.promo-estrela.e2{width:22px;height:22px;right:-10px;top:16%;rotate:12deg;animation-delay:-.8s}
+@keyframes promo-brilha{0%,100%{scale:1;filter:drop-shadow(0 0 4px rgba(255,190,60,.7))}50%{scale:1.25;filter:drop-shadow(0 0 12px rgba(255,210,90,1))}}
+@keyframes promo-raio{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}}
 .promo-topo{position:relative;flex:0 0 auto;margin:0 10px 0 2px}
 .promo-raios{position:absolute;left:-14px;top:-17px;width:20px;height:20px;fill:none;stroke:#3aa6f2;stroke-width:2.8;stroke-linecap:round}
 .promo-rotulo,.promo h3{filter:drop-shadow(1px 0 0 #1c6fb8) drop-shadow(-1px 0 0 #1c6fb8) drop-shadow(0 1px 0 #1c6fb8) drop-shadow(0 -1px 0 #1c6fb8) drop-shadow(0 3px 0 rgba(0,0,0,.18))}
