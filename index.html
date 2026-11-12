@@ -845,6 +845,11 @@ body{padding-top:0}
 .produtos::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:#fff}
 .produtos .produtos-lista a{background:#fff}
 .produtos-titulo{text-align:center;font-size:30px;color:#1a8fd6}
+/* catálogo: mesmo título de "O que vendemos" + botão rosa para o catálogo completo */
+.catalogo{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;padding-top:34px;padding-bottom:110px}
+.catalogo-btn{display:inline-flex;align-items:center;gap:6px;margin-top:22px;padding:13px 26px;border-radius:999px;background:#f0457a;color:#fff;font:800 15px/1 var(--titulo);letter-spacing:.03em;text-decoration:none;box-shadow:0 10px 22px -12px rgba(240,69,122,.8);transition:transform .2s}
+.catalogo-btn:hover{transform:translateY(-2px)}
+@media (min-width:960px){ .catalogo{padding-top:56px;padding-bottom:30px} .catalogo-btn{font-size:17px;padding:15px 32px} }
 .produtos-titulo::after{content:"";display:block;width:44px;height:3px;margin:12px auto 0;border-radius:3px;background:#f0457a}
 .produtos-lista{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 0;padding:0;list-style:none}
 .produtos-lista li:last-child{grid-column:1 / -1}
