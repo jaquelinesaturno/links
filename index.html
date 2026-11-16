@@ -848,7 +848,7 @@ body{padding-top:0}
 .produtos .produtos-lista a{background:#fff}
 .produtos-titulo{text-align:center;font-size:30px;color:#1a8fd6}
 /* catálogo: mesmo título de "O que vendemos" + botão rosa para o catálogo completo */
-.catalogo{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;padding-top:34px;padding-bottom:110px}
+.catalogo{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;padding-top:34px;padding-bottom:40px}
 .catalogo-btn{display:inline-flex;align-items:center;gap:6px;margin-top:22px;padding:13px 26px;border-radius:999px;background:#f0457a;color:#fff;font:800 15px/1 var(--titulo);letter-spacing:.03em;text-decoration:none;box-shadow:0 10px 22px -12px rgba(240,69,122,.8);transition:transform .2s}
 .catalogo-btn:hover{transform:translateY(-2px)}
 @media (min-width:960px){ .catalogo{padding-top:56px;padding-bottom:30px} .catalogo-btn{font-size:17px;padding:15px 32px} }
@@ -861,11 +861,13 @@ body{padding-top:0}
 .rb12{right:22%;top:66px;width:26px;rotate:-5deg}.rb12 path{stroke:#f6e6a8}
 .rb13{right:7%;top:20px;width:20px;rotate:10deg}.rb13 path{stroke:#fcd3dc}
 .catalogo-btn{position:relative;z-index:1}
+/* a setinha ↗ aparece como texto, não como emoji azul do iPhone */
+.catalogo-btn,.info-link{font-variant-emoji:text}
 @media (max-width:959px){
-  .catalogo-rabiscos{height:170px}
+  .catalogo-rabiscos{height:100px}
   .rb10{left:5%;top:16px;width:24px}
-  .rb11{left:12%;top:96px;width:16px}
-  .rb12{right:10%;top:100px;width:22px}
+  .rb11{left:12%;top:62px;width:16px}
+  .rb12{right:10%;top:66px;width:22px}
   .rb13{right:5%;top:14px;width:16px}
 }
 @media (min-width:960px){ .catalogo-rabiscos{height:120px} .rb10{top:54px} .rb13{top:48px} .rb11{left:22%;top:88px} .rb12{right:22%;top:82px} }
