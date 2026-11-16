@@ -853,6 +853,22 @@ body{padding-top:0}
 .catalogo-btn:hover{transform:translateY(-2px)}
 @media (min-width:960px){ .catalogo{padding-top:56px;padding-bottom:30px} .catalogo-btn{font-size:17px;padding:15px 32px} }
 /* peças do catálogo: quadrinhos pequenos numa fileira só, rolando para o lado sem fim, com setas */
+/* rabiscos no branco embaixo da fileira do catálogo (dos lados do botão) */
+.catalogo-rabiscos{position:absolute;z-index:0;left:50%;bottom:0;width:100vw;height:150px;transform:translateX(-50%);pointer-events:none}
+.catalogo-rabiscos .rb path{stroke-width:7}
+.rb10{left:7%;top:22px;width:28px;rotate:-8deg}.rb10 path{stroke:#fcd3dc}
+.rb11{left:24%;top:70px;width:20px;rotate:6deg}.rb11 path{stroke:#cfeaf6}
+.rb12{right:22%;top:66px;width:26px;rotate:-5deg}.rb12 path{stroke:#f6e6a8}
+.rb13{right:7%;top:20px;width:20px;rotate:10deg}.rb13 path{stroke:#fcd3dc}
+.catalogo-btn{position:relative;z-index:1}
+@media (max-width:959px){
+  .catalogo-rabiscos{height:170px}
+  .rb10{left:5%;top:16px;width:24px}
+  .rb11{left:12%;top:96px;width:16px}
+  .rb12{right:10%;top:100px;width:22px}
+  .rb13{right:5%;top:14px;width:16px}
+}
+@media (min-width:960px){ .catalogo-rabiscos{height:120px} .rb11{left:22%;top:60px} .rb12{right:22%;top:56px} }
 /* de ponta a ponta da tela */
 .catalogo-carrossel{position:relative;align-self:stretch;margin:24px calc(50% - 50vw) 0}
 .catalogo-carrossel[hidden]{display:none}
