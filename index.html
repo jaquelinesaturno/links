@@ -853,7 +853,8 @@ body{padding-top:0}
 .catalogo-btn:hover{transform:translateY(-2px)}
 @media (min-width:960px){ .catalogo{padding-top:56px;padding-bottom:30px} .catalogo-btn{font-size:17px;padding:15px 32px} }
 /* peças do catálogo: quadrinhos pequenos numa fileira só, rolando para o lado sem fim, com setas */
-.catalogo-carrossel{position:relative;width:100%;margin-top:24px}
+/* de ponta a ponta da tela */
+.catalogo-carrossel{position:relative;align-self:stretch;margin:24px calc(50% - 50vw) 0}
 .catalogo-carrossel[hidden]{display:none}
 .catalogo-janela{overflow:hidden;padding:6px 0 20px;touch-action:pan-y}
 .catalogo-lista{display:flex;gap:12px;width:max-content;margin:0;padding:0;list-style:none;will-change:transform}
