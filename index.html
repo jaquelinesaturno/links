@@ -1774,6 +1774,45 @@ function aplicaPromo(d) {
   promo.hidden = !!esconde;
   document.querySelector(".vip-linha")?.classList.toggle("sem-promo", !!esconde);
 }
+// CATÁLOGO: as peças vêm do feed oficial do Catálogo Intel. Mostra só peças disponíveis, com foto e preço;
+// as marcadas como destaque no catálogo aparecem primeiro. Se o feed falhar, fica só o título e o botão.
+const FEED_CATALOGO = "https://catalogointel.com/feed/pequenosaprendizes";
+const urlSegura = u => typeof u === "string" && /^https:\/\//i.test(u) ? u : "";
+fetch(FEED_CATALOGO)
+  .then(r => r.ok ? r.json() : Promise.reject())
+  .then(dados => {
+    const lista = document.querySelector(".catalogo-lista");
+    if (!lista || !Array.isArray(dados.produtos)) return;
+    const pecas = dados.produtos
+      .filter(p => p && p.disponivel && p.preco_texto && Array.isArray(p.fotos) && urlSegura(p.fotos[0]))
+      .sort((a, b) => (b.destaque ? 1 : 0) - (a.destaque ? 1 : 0))
+      .slice(0, 8);
+    if (!pecas.length) return;
+    pecas.forEach(p => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = urlSegura(p.link) || "https://catalogointel.com/loja/pequenosaprendizes";
+      a.target = "_blank"; a.rel = "noopener";
+      const foto = document.createElement("span"); foto.className = "catalogo-foto";
+      const img = document.createElement("img");
+      img.src = urlSegura(p.fotos[0]); img.alt = p.nome || ""; img.loading = "lazy"; img.decoding = "async";
+      foto.appendChild(img);
+      const rotulo = p.destaque_rotulo || (p.desconto_pct ? p.desconto_pct + "% OFF" : (p.novo ? "Novo" : ""));
+      if (rotulo) {
+        const selo = document.createElement("span");
+        selo.className = "catalogo-selo" + (!p.destaque_rotulo && !p.desconto_pct ? " novo" : "");
+        selo.textContent = rotulo; foto.appendChild(selo);
+      }
+      const nome = document.createElement("span"); nome.className = "catalogo-nome"; nome.textContent = p.nome || "";
+      const preco = document.createElement("span"); preco.className = "catalogo-preco";
+      if (p.preco_de) { const s = document.createElement("s"); s.textContent = typeof p.preco_de === "number" ? p.preco_de.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) : String(p.preco_de); preco.appendChild(s); }
+      preco.appendChild(document.createTextNode(p.preco_texto));
+      a.append(foto, nome, preco); li.appendChild(a); lista.appendChild(li);
+    });
+    lista.hidden = false;
+  })
+  .catch(() => {});
+
 fetch(PLANILHA_PROMO, { cache: "no-store" })
   .then(r => r.ok ? r.text() : Promise.reject())
   .then(csv => aplicaPromo(lePlanilha(csv)))
