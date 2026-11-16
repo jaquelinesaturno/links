@@ -1800,7 +1800,7 @@ fetch(FEED_CATALOGO)
     const pecas = dados.produtos
       .filter(p => p && p.disponivel && p.preco_texto && Array.isArray(p.fotos) && urlSegura(p.fotos[0]))
       .sort((a, b) => (b.destaque ? 1 : 0) - (a.destaque ? 1 : 0))
-      .slice(0, 8);
+      .slice(0, 30);
     if (!pecas.length) return;
     pecas.forEach(p => {
       const li = document.createElement("li");
