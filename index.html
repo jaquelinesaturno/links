@@ -1823,9 +1823,58 @@ fetch(FEED_CATALOGO)
       preco.appendChild(document.createTextNode(p.preco_texto));
       a.append(foto, nome, preco); li.appendChild(a); lista.appendChild(li);
     });
-    lista.hidden = false;
+    // cópia das peças logo depois, para a fileira emendar e rolar sem fim
+    [...lista.children].forEach(li => {
+      const c = li.cloneNode(true);
+      c.setAttribute("aria-hidden", "true");
+      c.querySelector("a").tabIndex = -1;
+      lista.appendChild(c);
+    });
+    lista.closest(".catalogo-carrossel").hidden = false;
+    rolaCatalogo(lista, pecas.length);
   })
   .catch(() => {});
+
+// fileira do catálogo: anda sozinha para a esquerda; as setas passam uma peça; no celular dá para arrastar com o dedo
+function rolaCatalogo(lista, qtd) {
+  const janela = lista.parentElement;
+  const VEL = 32;                       // px por segundo
+  let x = 0, alvo = null, parado = false, arrasto = null, moveu = false, antes = 0, metade = 0, passo = 0;
+  const mede = () => {
+    const itens = lista.children;
+    metade = itens[qtd].offsetLeft - itens[0].offsetLeft;
+    passo = itens[1] ? itens[1].offsetLeft - itens[0].offsetLeft : metade;
+  };
+  mede();
+  addEventListener("resize", mede);
+  const quadro = t => {
+    const dt = antes ? Math.min((t - antes) / 1000, .1) : 0; antes = t;
+    if (metade > 0) {
+      if (alvo !== null) { x += (alvo - x) * Math.min(1, dt * 9); if (Math.abs(alvo - x) < .5) { x = alvo; alvo = null; } }
+      else if (!parado && !arrasto) x += VEL * dt;
+      while (x >= metade) { x -= metade; if (alvo !== null) alvo -= metade; }
+      while (x < 0) { x += metade; if (alvo !== null) alvo += metade; }
+      lista.style.transform = "translateX(" + (-x).toFixed(2) + "px)";
+    }
+    requestAnimationFrame(quadro);
+  };
+  requestAnimationFrame(quadro);
+  janela.closest(".catalogo-carrossel").querySelectorAll(".cat-seta").forEach(b =>
+    b.addEventListener("click", () => { alvo = (alvo ?? x) + Number(b.dataset.dir) * passo; }));
+  if (matchMedia("(hover:hover)").matches) {
+    janela.addEventListener("mouseenter", () => parado = true);
+    janela.addEventListener("mouseleave", () => parado = false);
+  }
+  janela.addEventListener("touchstart", e => { arrasto = { x0: x, dedo: e.touches[0].clientX }; alvo = null; moveu = false; }, { passive: true });
+  janela.addEventListener("touchmove", e => {
+    if (!arrasto) return;
+    const dx = e.touches[0].clientX - arrasto.dedo;
+    if (Math.abs(dx) > 6) moveu = true;
+    x = arrasto.x0 - dx;
+  }, { passive: true });
+  janela.addEventListener("touchend", () => { arrasto = null; });
+  janela.addEventListener("click", e => { if (moveu) { e.preventDefault(); moveu = false; } }, true);
+}
 
 fetch(PLANILHA_PROMO, { cache: "no-store" })
   .then(r => r.ok ? r.text() : Promise.reject())
