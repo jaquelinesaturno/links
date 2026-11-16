@@ -852,6 +852,26 @@ body{padding-top:0}
 .catalogo-btn{display:inline-flex;align-items:center;gap:6px;margin-top:22px;padding:13px 26px;border-radius:999px;background:#f0457a;color:#fff;font:800 15px/1 var(--titulo);letter-spacing:.03em;text-decoration:none;box-shadow:0 10px 22px -12px rgba(240,69,122,.8);transition:transform .2s}
 .catalogo-btn:hover{transform:translateY(-2px)}
 @media (min-width:960px){ .catalogo{padding-top:56px;padding-bottom:30px} .catalogo-btn{font-size:17px;padding:15px 32px} }
+/* peças do catálogo: quadrinhos com contorno azul, igual "O que vendemos" (6 no celular, 8 no computador) */
+.catalogo-lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%;margin:24px 0 0;padding:0;list-style:none}
+.catalogo-lista[hidden]{display:none}
+.catalogo-lista li:nth-child(n+7){display:none}
+.catalogo-lista a{display:flex;flex-direction:column;height:100%;border:2px solid #6cc4f4;border-radius:18px;overflow:hidden;background:#fff;text-align:center;text-decoration:none;color:var(--tinta);box-shadow:0 14px 30px -22px rgba(17,17,17,.4);transition:transform .2s}
+.catalogo-lista a:hover{transform:translateY(-3px)}
+.catalogo-foto{position:relative;display:block;aspect-ratio:4/5;background:#fbf6f1}
+.catalogo-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.catalogo-selo{position:absolute;top:8px;left:8px;padding:4px 9px;border-radius:999px;background:#f0457a;color:#fff;font:800 10px/1 var(--titulo);letter-spacing:.06em;text-transform:uppercase}
+.catalogo-selo.novo{background:#1a8fd6}
+.catalogo-nome{display:block;padding:10px 8px 0;font-family:var(--titulo);font-size:13.5px;font-weight:800;line-height:1.2;color:#f0457a}
+.catalogo-preco{display:block;padding:4px 8px 12px;font-size:13px;font-weight:700;color:#1a8fd6}
+.catalogo-preco s{margin-right:5px;font-weight:400;color:#999}
+@media (min-width:960px){
+  .catalogo-lista{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;max-width:1104px;margin-top:34px}
+  .catalogo-lista li:nth-child(n+7){display:block}
+  .catalogo-lista li:nth-child(n+9){display:none}
+  .catalogo-nome{font-size:16px;padding-top:12px}
+  .catalogo-preco{font-size:15px;padding-bottom:14px}
+}
 .produtos-titulo::after{content:"";display:block;width:44px;height:3px;margin:12px auto 0;border-radius:3px;background:#f0457a}
 .produtos-lista{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 0;padding:0;list-style:none}
 .produtos-lista li:last-child{grid-column:1 / -1}
